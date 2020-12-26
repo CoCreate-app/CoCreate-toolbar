@@ -1,6 +1,6 @@
 {
-  "name": "CoCreate-action",
-  "version": "1.0.0",
+  "name": "CoCreate-toolbar",
+  "version": "0.1.0",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoCreate-app/CoCreate-action.git"
+    "url": "git+https://github.com/CoCreate-app/CoCreate-toolbar.git"
   },
   "author": "Frank Pagan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CoCreate-app/CoCreate-action/issues"
+    "url": "https://github.com/CoCreate-app/CoCreate-toolbar/issues"
   },
-  "homepage": "https://github.com/CoCreate-app/CoCreate-action#readme"
+  "homepage": "https://github.com/CoCreate-app/CoCreate-toolbar#readme"
 }

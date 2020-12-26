@@ -1,7 +1,7 @@
-![GitHub file size in bytes](https://img.shields.io/github/size/CoCreate-app/CoCreate-toolbar/dist/CoCreate-toolbar.min.js?label=minified%20size) 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/CoCreate-app/CoCreate-toolbar)
-![GitHub](https://img.shields.io/github/license/CoCreate-app/CoCreate-toolbar) 
-![GitHub labels](https://img.shields.io/github/labels/CoCreate-app/CoCreate-toolbar/help%20wanted)
+![GitHub file size in bytes](https://img.shields.io/github/size/CoCreate-app/CoCreate-toolbar/dist/CoCreate-toolbar.min.js?label=minified%20size&style=for-the-badge) 
+![GitHub package.json version](https://img.shields.io/github/package-json/v/CoCreate-app/CoCreate-toolbar?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/CoCreate-app/CoCreate-toolbar?style=for-the-badge) 
+![GitHub labels](https://img.shields.io/github/labels/CoCreate-app/CoCreate-toolbar/help%20wanted?style=for-the-badge)
 
 # CoCreate-toolbar
 A simple HTML5 and pure javascript component. Easy configuration using data-attributes and highly styleable.
