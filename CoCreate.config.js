@@ -9,7 +9,7 @@ module.exports = {
     sources: [{
             path: "./docs/index.html",
             collection: "files",
-            document_id: "",
+            document_id: "6012e50d86c0ba24512cc9e6",
             key: "html",
             data:{
                 name: "Toolbar Doc",
@@ -19,10 +19,10 @@ module.exports = {
    
     crud: [{
             collection: "routes",
-            document_id: "",
+            document_id: "6012e50d86c0ba24512cc9e5",
             data:{
                 collection: "files",
-                document_id: "",
+                document_id: "6012e50d86c0ba24512cc9e6",
                 name: "html",
                 domains: ["cocreate.app", "server.cocreate.app", "ws.cocreate.app"],
                 route: "/docs/toolbar",
