@@ -18,7 +18,7 @@
   }
   
 let toolbars = {};
-function toolbar({selector, event, frame, elementConfig, configKey}) {
+function CoCreateToolbar({selector, event, frame, elementConfig, configKey}) {
   
 
   
@@ -50,11 +50,9 @@ function toolbar({selector, event, frame, elementConfig, configKey}) {
 
     Window.addEventListener("scroll", () => element && update(element));
     function update(element) {
-      // for (let config of window.cc.configMatch(elementConfig, element))
-      //   if (event === "click" && config.hoverable === false) return;
-      //   else if (event === "mouseover" && config.selectable === false) return;
 
-      CoCreateUtils.configExecuter(
+
+      CoCreate.utils.configExecuter(
         element,
         configKey,
         (element, config, isSelector) => {
@@ -116,5 +114,5 @@ function toolbar({selector, event, frame, elementConfig, configKey}) {
   }
 }
 
-window.CoCreateToolbar = { init: toolbar };
-// window.addEventListener("load", toolbar);
+
+export default { init: CoCreateToolbar };
