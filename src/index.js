@@ -4,7 +4,7 @@
       * @returns {object} { x: num, y: num }
       */
 /*global ResizeObserver*/
-     import { configExecuter } from '../../../CoCreateJS/src/utils'
+     import { configExecuter } from '@cocreate/utils'
 
      function getPosition(el) {
          let { x, y } = el.getBoundingClientRect()
