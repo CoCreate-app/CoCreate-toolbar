@@ -51,13 +51,15 @@
              let initiated = false;
              let continer = {};
              let watch;
+                        console.log('cocreateToolbar Document')
+            window.cocreateToolbar = Document;
              Document.addEventListener(eventType, (e) => {
                  continer.lastElement = continer.element;
                  continer.element = e.target;
                  update();
 
              });
-
+ 
              Window.addEventListener("scroll",
                  () =>
                  continer.element && update(continer.element)
