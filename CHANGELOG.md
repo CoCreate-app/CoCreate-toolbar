@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.0...v1.1.1) (2021-04-07)
+
+
+### Bug Fixes
+
+* resolved bugs related to compiler. Currently in a good working state ([2684266](https://github.com/CoCreate-app/CoCreate-toolbar/commit/2684266c8a8855a83654d61dfde6b2f55d41b3cb))
+
 # [1.1.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.0.0...v1.1.0) (2021-03-29)
 
 
