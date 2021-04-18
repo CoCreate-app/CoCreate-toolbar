@@ -9,7 +9,7 @@ A simple toolbar component in vanilla javascript. Easily configured using HTML5 
 
 ![CoCreate-toolbar](https://cdn.cocreate.app/docs/CoCreate-toolbar.gif)
 
-## [Docs & Demo](https://cocreate.app/docs/clone)
+## [Docs & Demo](https://cocreate.app/docs/toolbar)
 
 For a complete guide and working demo refer to the [doumentation](https://cocreate.app/docs/toolbar)
 
