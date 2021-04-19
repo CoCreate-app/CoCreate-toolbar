@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.1...v1.1.2) (2021-04-19)
+
+
+### Bug Fixes
+
+* ci and build process ([5219110](https://github.com/CoCreate-app/CoCreate-toolbar/commit/52191104618b33284b99bec8b084b6dd05c7a8b6))
+* npm publish and cdn deployment ([6db3d9f](https://github.com/CoCreate-app/CoCreate-toolbar/commit/6db3d9f5fcf395c34a7cd637b1b65851d5c016c2))
+
 ## [1.1.1](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.0...v1.1.1) (2021-04-07)
 
 
