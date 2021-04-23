@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.3...v1.1.4) (2021-04-23)
+
+
+### Bug Fixes
+
+* readme and documentation. Removed securitykeys ([b7c881f](https://github.com/CoCreate-app/CoCreate-toolbar/commit/b7c881f228d216ad20a0ccd1406030f7767d171c))
+
 ## [1.1.3](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.2...v1.1.3) (2021-04-19)
 
 
