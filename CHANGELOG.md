@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.4...v1.1.5) (2021-04-27)
+
+
+### Bug Fixes
+
+* Update to readme, demo, added cdn scripts ([e261f3b](https://github.com/CoCreate-app/CoCreate-toolbar/commit/e261f3b7e25eda88409aa13888ec0ebe0c84226f))
+
 ## [1.1.4](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.3...v1.1.4) (2021-04-23)
 
 
