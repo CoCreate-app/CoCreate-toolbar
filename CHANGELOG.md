@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.5...v1.1.6) (2021-04-27)
+
+
+### Bug Fixes
+
+* add host in docs ([72659ba](https://github.com/CoCreate-app/CoCreate-toolbar/commit/72659ba19c51537cbf7946e61ccc7ca2ba32b168))
+
 ## [1.1.5](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.4...v1.1.5) (2021-04-27)
 
 
