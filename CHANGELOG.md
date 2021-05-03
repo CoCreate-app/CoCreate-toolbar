@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.6...v1.1.7) (2021-05-03)
+
+
+### Bug Fixes
+
+* calculate el parent's possition in scroll ([4d92e30](https://github.com/CoCreate-app/CoCreate-toolbar/commit/4d92e306099f7dcf8641a938c663686b7e097144))
+
 ## [1.1.6](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.5...v1.1.6) (2021-04-27)
 
 

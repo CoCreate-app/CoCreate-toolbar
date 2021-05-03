@@ -7,18 +7,19 @@
      import { configExecuter } from '@cocreate/utils'
 
      function getPosition(el) {
-         let { x, y } = el.getBoundingClientRect()
-         return { left: x, top: y };
-         // var x = 0,
-         //     y = 0;
+        //  let { x, y } = el.getBoundingClientRect()
+        //  return { left: x, top: y };
+        // finding el possition in scroll
+          let x = 0,
+              y = 0;
 
-         // while (el != null && (el.tagName || '').toLowerCase() != 'html') {
-         //     x += el.offsetLeft || 0; 
-         //     y += el.offsetTop || 0;
-         //     el = el.offsetParent;
-         // }
+          while (el != null && el.tagName) {
+              x += el.offsetLeft || 0; 
+              y += el.offsetTop || 0;
+              el = el.offsetParent;
+          }
 
-         // return { left: parseInt(x, 10), top: parseInt(y, 10) };
+          return { left: parseInt(x, 10), top: parseInt(y, 10) };
      }
 
      let toolbars = {};
