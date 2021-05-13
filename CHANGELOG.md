@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.7...v1.1.8) (2021-05-08)
+
+
+### Bug Fixes
+
+* add css auto parse and save to docs. ([a0fd158](https://github.com/CoCreate-app/CoCreate-toolbar/commit/a0fd15819be721c973bfd216f7dbe2a21cf31e7f))
+
 ## [1.1.7](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.6...v1.1.7) (2021-05-03)
 
 
