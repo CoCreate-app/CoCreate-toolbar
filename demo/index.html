@@ -5,21 +5,49 @@
 
      <!-- CoCreate Favicon -->
     <link rel="icon" href="https://cdn.cocreate.app/favicon.ico" type="image/ico" sizes="16x16">
-    <!-- CoCreate CSS CDN -->
-    <link rel="stylesheet" href="https://cdn.cocreate.app/toolbar/latest/CoCreate-toolbar.min.css" type="text/css" />
+    <!-- CoCreate CSS -->
+    <link rel="stylesheet" href="https://cdn.cocreate.app/latest/CoCreate.min.css" type="text/css"/>
+        <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />    
+
   </head>
 
   <body>
+    <div class="margin-bottom:100px"></div>
+    
+    <h1 id="test">Im a test... hover over me</h1>
+    
+    
+    <!-- Collaboration Toolbar -->
+    <div data-toolbar_placent="top" data-toolbar_target="#test" class="position:absolute">
+        <div class="toolbar width:100%">
+            <span id="bold-button"><i class="fa fa-bold"></i></span>
+            <span id="italic-button"><i class="fa fa-italic"></i></span>
+            <span id="link-button"><i class="fa fa-link"></i></span>
+            <span id="blockquote-button"><i class="fa fa-quote-right"></i></span>
+            <span id="header-1-button"><i class="fas fa-heading"></i><sub>1</sub></span>
+            <span id="header-2-button"><i class="fas fa-heading"></i><sub>2</sub></span>
+            <span data-hover="display:inline-block" data-show="#controls" data-hide="#controls"><i class="fa fa-plus"></i></span>
+            <span id="controls" class="hidden">
+                <span id="image-button"><i class="fa fa-camera"></i></span>
+                <span id="video-button"><i class="fa fa-play"></i></span>
+                <span id="tweet-button"><i class="fab fa-twitter"></i></span>
+                <span id="divider-button"><i class="fa fa-minus"></i></span>
+            </span>
+        </div>
+        <div class="height:100% width:100%"></div>
+    </div>
+    <!-- End Collaboration Toolbar -->
     
 
     <script>
       var config = {
         apiKey: 'c2b08663-06e3-440c-ef6f-13978b42883a',
-                organization_Id: '5de0387b12e200ea63204d6c'
+        organization_Id: '5de0387b12e200ea63204d6c'
       }
     </script>
 
     <!-- CoCreate JS CDN -->
-    <script src="https://cdn.cocreate.app/toolbar/latest/CoCreate-toolbar.min.js" ></script>
+    <script src="https://cdn.cocreate.app/latest/CoCreate.min.js"></script>
   </body>
 </html>
