@@ -1,3 +1,10 @@
+## [1.1.16](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.15...v1.1.16) (2021-07-10)
+
+
+### Bug Fixes
+
+* gitignore all logs ([7fb383d](https://github.com/CoCreate-app/CoCreate-toolbar/commit/7fb383d502407a4d0676e3423f7bf6dd4c02084b))
+
 ## [1.1.15](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.14...v1.1.15) (2021-07-07)
 
 
