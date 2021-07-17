@@ -1,3 +1,11 @@
+## [1.1.19](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.18...v1.1.19) (2021-07-17)
+
+
+### Bug Fixes
+
+* init and update demos scripts ([58f791f](https://github.com/CoCreate-app/CoCreate-toolbar/commit/58f791fe07ccf803675294621f2b554550dd46ab))
+* workflows ([8772041](https://github.com/CoCreate-app/CoCreate-toolbar/commit/8772041a2fd4109eed51592d952cc1ca7a669ac5))
+
 ## [1.1.18](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.1.17...v1.1.18) (2021-07-14)
 
 
