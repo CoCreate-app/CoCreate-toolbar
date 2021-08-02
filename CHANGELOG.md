@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.2.1...v1.2.2) (2021-08-02)
+
+
+### Bug Fixes
+
+* remove data- from attributes ([f063ef2](https://github.com/CoCreate-app/CoCreate-toolbar/commit/f063ef2c464a314ce5507a72b164bee40749f5cb))
+* update data-fullscreen to fullscreen ([8755ddc](https://github.com/CoCreate-app/CoCreate-toolbar/commit/8755ddcf68385538f11318d66c3a0644c4095e6a))
+
 ## [1.2.1](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.2.0...v1.2.1) (2021-07-28)
 
 
