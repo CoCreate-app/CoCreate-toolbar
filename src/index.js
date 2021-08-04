@@ -52,7 +52,7 @@
              let initiated = false;
              let continer = {};
              let watch;
-                        console.log('cocreateToolbar Document')
+            
             window.cocreateToolbar = Document;
              Document.addEventListener(eventType, (e) => {
                  continer.lastElement = continer.element;
