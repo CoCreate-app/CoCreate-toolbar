@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.2.2...v1.2.3) (2021-08-10)
+
+
+### Bug Fixes
+
+* remove console.logs ([216dcab](https://github.com/CoCreate-app/CoCreate-toolbar/commit/216dcab22b32f6f34129278350d6cf48a7ad10f4))
+
 ## [1.2.2](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.2.1...v1.2.2) (2021-08-02)
 
 
