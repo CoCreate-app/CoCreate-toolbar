@@ -1,3 +1,11 @@
+## [1.2.4](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.2.3...v1.2.4) (2021-08-13)
+
+
+### Bug Fixes
+
+* remove data- from toolar attributes ([ec0af1e](https://github.com/CoCreate-app/CoCreate-toolbar/commit/ec0af1e8c52c605a22672b3b2d4e4b460a7ded80))
+* update to  docs ([e771f5e](https://github.com/CoCreate-app/CoCreate-toolbar/commit/e771f5e016cc003bfb2655c2fc92d6db058a73dc))
+
 ## [1.2.3](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.2.2...v1.2.3) (2021-08-10)
 
 
