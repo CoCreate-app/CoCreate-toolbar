@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.2.5...v1.2.6) (2021-08-22)
+
+
+### Bug Fixes
+
+* bump package versions ([eb5a035](https://github.com/CoCreate-app/CoCreate-toolbar/commit/eb5a0353d1ef75bd08f9665d54f3caacbde2ff2e))
+
 ## [1.2.5](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.2.4...v1.2.5) (2021-08-22)
 
 
