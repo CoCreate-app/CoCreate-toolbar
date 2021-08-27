@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.2.8...v1.3.0) (2021-08-27)
+
+
+### Features
+
+* configure using html5 attributes ([ce58f93](https://github.com/CoCreate-app/CoCreate-toolbar/commit/ce58f9359d10a67df8938dc17368ffd9018be3f6))
+
 ## [1.2.8](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.2.7...v1.2.8) (2021-08-23)
 
 
