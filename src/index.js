@@ -1,15 +1,6 @@
-/**
- * returns the absolute position of an element regardless of position/float issues
- * @param {HTMLElement} el - element to return position for 
- * @returns {object} { x: num, y: num }
- */
-/*global ResizeObserver*/
-/*global ResizeObserver*/
+import observer from '@cocreate/observer';
 
-import { configExecuter } from '@cocreate/utils'
-
-let toolbars = {};
-let ntoolbars = [];
+let toolbars = [];
 
 function initToolbar() {
 	let elements = document.querySelectorAll('[toolbar-target]');
@@ -40,190 +31,140 @@ async function initElement(element) {
 		selector: '[toolbar-target]',
 		eventType: event,
 		target: target,
-		document: Document,
+		targetDocument: Document,
 	});
 
 }
 
-function createToolbar({ element, selector, eventType, target, document: sDoc, config, configKey }) {
+function init(params) {
+	params.element = document.querySelector(params.selector);
+	if (params.element)
+		createToolbar(params);
+}
 
+function createToolbar({ element, selector, eventType, target, targetDocument, onEvent }) {
 
-	let Window, Document, frameElement, frame = sDoc.defaultView.frameElement;
+	let Window, Document, frame = targetDocument.defaultView.frameElement;
 
 	if(!frame) {
-		//  frameElement = frame.contentWindow.document.body;
 		Document = document;
 		Window = window;
 	}
 	else {
-		frameElement = frame;
 		Window = frame.contentWindow;
 		Document = Window.document || Window.contentDocument;
 	}
-	let box = document.querySelector(selector);
-	if(box) {
+	
+	let continer = {};
+	let watch;
 
-		toolbars[selector] = box;
+	Document.addEventListener(eventType, (e) => {
+		if (e.target.hasAttribute('toolbar-target')) return;
+		continer.lastElement = continer.element;
+		continer.element = e;
+		findToolbar(e);
+		// resizeOb()
+	});
+
+	Window.addEventListener("scroll",
+		() =>
+		continer.element && findToolbar(continer.element)
+	);
+	
+	Window.CoCreate.observer.init({
+	    name: 'CoCreateToolbar',
+	    observe: ['childList'],
+	    callback (mutation) {
+	        if (mutation.target == continer.element);
+	        	findToolbar(continer.element);
+	    }
+	});
+
+	toolbars.push({ element, selector, eventType, target, Document, onEvent });
+}
+
+/*global ResizeObserver*/
+function resizeOb() {
+	if (continer.element){
+		if(watch)
+			watch.unobserve(continer.lastElement.target)
+		watch = new ResizeObserver(() => continer.element && findToolbar(continer.element));
+		watch.observe(continer.element.target);
+	}
+}
 
 
-
-		let toolbar = box.querySelector(":scope .toolbar");
-		let tagName = box.querySelector(":scope [tagName]");
-		if(!toolbar) toolbar = { offsetHeight: 0 };
-		let initiated = false;
-		let continer = {};
-		let watch;
-
-		window.cocreateToolbar = Document;
-		Document.addEventListener(eventType, (e) => {
-			continer.lastElement = continer.element;
-			continer.element = e.target;
-			// showToolbar(e);
-			update();
-		});
-
-		Window.addEventListener("scroll",
-			() =>
-			continer.element && update(continer.element)
-		);
-
-		// ntoolbars.set(selector, eventType, target, Document);
-
-		ntoolbars.push({ element, selector, eventType, target, Document });
-
-
-		function update(dontWatch) {
-			//  if (!initiated) {
-			//      initiated = true;
-			//      Window.addEventListener("scroll",
-			//          () =>
-			//          continer.element && update(continer.element)
-			//      );
-
-			//  }
-			if(!dontWatch) {
-				if(watch)
-					watch.unobserve(continer.lastElement)
-				watch = new ResizeObserver(() => continer.element && update(true));
-				watch.observe(continer.element);
+function findToolbar(e) {
+	let target = e.target;
+	for(let toolbar of toolbars) {
+		if (toolbar.Document == target.ownerDocument && toolbar.eventType == e.type) {
+			if (toolbar.onEvent) {
+				let r = toolbar.onEvent(target, e.type);
+				if (Array.isArray(r)) {
+					toolbar.target = target;
+					showToolbar(toolbar)
+				}
 			}
-
-			if (configExecuter) {
-				configExecuter(
-					continer.element,
-					configKey,
-					(element, config, isSelector) => {
-	
-						if(isSelector) {
-							let selector = config[configKey];
-							if(!toolbars[selector]) {
-								box = document.querySelector(selector)
-								toolbars[selector] = box;
-								toolbar = box.querySelector(":scope .toolbar");
-								tagName = box.querySelector(":scope [tagName]");
-							}
-	
-						}
-	
-	
-						let elPosition = getPosition(element)
-						box.style.display = "block";
-						box.style.top =
-							frameElement.offsetTop +
-							elPosition.top -
-							Window.scrollY -
-							toolbar.offsetHeight +
-							"px";
-						box.style.left =
-							frameElement.offsetLeft +
-							elPosition.left +
-							Window.scrollX +
-							"px";
-						box.style.width = element.offsetWidth + "px";
-						box.style.height = element.offsetHeight + "px";
-	
-						if(element.offsetTop - toolbar.offsetHeight < 0)
-							box.setAttribute("toolbar-overflow", "");
-						else box.removeAttribute("toolbar-overflow");
-	
-						if(tagName && tagName.innerHTML !== element.tagName) {
-							tagName.innerHTML = element.tagName;
-	
-							// for (let config of elementConfig) {
-							//   if (config.tagName && element.matches(config.selector)) {
-							//     if (tagName.innerHTML !== config.tagName)
-							//       tagName.innerHTML = config.tagName;
-							//     break;
-							//   }
-							// }
-	
-	
-							if(config.tagName && config.tagName !== tagName.innerHTML) {
-								tagName.innerHTML = config.tagName;
-							}
-						}
-					},
-					config
-				);
+			else {
+				target = target.closest(toolbar.target);
+				if(!target) {
+					// hideToolbar(element, type)
+					continue;
+				}
+				if (toolbar.eventType == e.type)
+				toolbar.target = target;
+				showToolbar(toolbar)
 			}
 		}
 	}
 }
 
-function showToolbar(e) {
-	let element = e.target;
-	let type = e.type
-	for(let toolbar of ntoolbars) {
-		if (!toolbar.target) continue; 
-		let target = element.closest(toolbar.target);
-		if(!target) {
-			// hideToolbar(element, type)
-			continue;
-		}
-		let tagName = element.tagName;
-		let box = toolbar.element;
-		let frameElement = toolbar.Document.defaultView.frameElement;
-		if(!frameElement)
-			frameElement = { offsetTop: 0, offsetLeft: 0 };
+function showToolbar(toolbar){
+	let target = toolbar.target;
+	let tagName = target.tagName;
+	let box = toolbar.element;
+	
+	let frameElement = toolbar.Document.defaultView.frameElement;
+	if(!frameElement)
+		frameElement = { offsetTop: 0, offsetLeft: 0 };
 
-		let Window = toolbar.Document.defaultView;
-		let bar = box.querySelector(":scope .toolbar");
-		let tagNameEl = box.querySelector(":scope [tagName]");
+	let Window = toolbar.Document.defaultView;
+	let bar = box.querySelector(":scope .toolbar");
+	if(!bar) bar = { offsetHeight: 0 };
+	let tagNameEl = box.querySelector(":scope [tagName]");
 
-		let elPosition = getPosition(element)
-		box.style.display = "block";
-		box.style.top =
-			frameElement.offsetTop +
-			elPosition.top -
-			Window.scrollY -
-			bar.offsetHeight +
-			"px";
-		box.style.left =
-			frameElement.offsetLeft +
-			elPosition.left +
-			Window.scrollX +
-			"px";
-		box.style.width = element.offsetWidth + "px";
-		box.style.height = element.offsetHeight + "px";
+	let elPosition = getPosition(target);
+	box.style.display = "block";
+	box.style.top =
+		frameElement.offsetTop +
+		elPosition.top -
+		Window.scrollY -
+		bar.offsetHeight +
+		"px";
+	box.style.left =
+		frameElement.offsetLeft +
+		elPosition.left +
+		Window.scrollX +
+		"px";
+	box.style.width = target.offsetWidth + "px";
+	box.style.height = target.offsetHeight + "px";
 
-		if(element.offsetTop - bar.offsetHeight < 0)
-			box.setAttribute("toolbar-overflow", "");
-		else box.removeAttribute("toolbar-overflow");
+	if(target.offsetTop - bar.offsetHeight < 0)
+		box.setAttribute("toolbar-overflow", "");
+	else box.removeAttribute("toolbar-overflow");
 
-		// if(tagName && tagName.innerHTML !== element.tagName) {
-		//     tagName.innerHTML = element.tagName;
-
-
-		//     if(config.tagName && config.tagName !== tagName.innerHTML) {
-		//         tagName.innerHTML = config.tagName;
-		//     }
-		// }
+	if(tagName && tagNameEl) {
+	    if(toolbar.tagName) {
+	        tagNameEl.innerHTML = toolbar.tagName;
+	    } 
+	    else
+	    	tagNameEl.innerHTML = tagName;
 	}
 
 }
 
 function hideToolbar(element, type) {
-	for(let toolbar of ntoolbars) {
+	for(let toolbar of toolbars) {
 		if(toolbar.eventType == type)
 			toolbar.element.style.display = "none";
 	}
@@ -247,4 +188,5 @@ function getPosition(el) {
 
 initToolbar();
 
-export default { init: createToolbar };
+
+export default { init };
