@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.3.1...v1.4.0) (2021-08-31)
+
+
+### Bug Fixes
+
+* observe new elements and recalculate new toolbar postion ([63a114b](https://github.com/CoCreate-app/CoCreate-toolbar/commit/63a114b24c31b9c08f266205f765a3059920e17d))
+
+
+### Features
+
+* observe element change and reposition toolbar ([27afa35](https://github.com/CoCreate-app/CoCreate-toolbar/commit/27afa358a7732a4820e106d056af0fe4322a28ee))
+
 ## [1.3.1](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.3.0...v1.3.1) (2021-08-27)
 
 
