@@ -16,16 +16,15 @@ function initElements(elements) {
 
 async function initElement(element) {
 	let targetSelector = element.getAttribute('toolbar-target');
-	let Document = document;
+	let targetDocument = document;
 
 	if(targetSelector.indexOf(';') !== -1) {
 		let documentSelector;
 		[documentSelector, targetSelector] = targetSelector.split(';');
 		let frame = document.querySelector(documentSelector)
-		Document = frame.contentDocument;
+		targetDocument = frame.contentDocument;
 	}
 
-	// let targetDocument = element.ownerDocument;
 	let event = element.getAttribute('toolbar-event');
 	if(!event)
 		event = 'mouseover';
@@ -35,7 +34,7 @@ async function initElement(element) {
 		selector: '[toolbar-target]',
 		eventType: event,
 		targetSelector: targetSelector,
-		targetDocument: Document,
+		targetDocument: targetDocument,
 	});
 
 }
@@ -44,15 +43,15 @@ function init({ element, selector, eventType, targetSelector, targetDocument, on
 	if (!element)
 		element = document.querySelector(selector);
 		
-	let Window, Document, frame = targetDocument.defaultView.frameElement;
+	let Window, frame = targetDocument.defaultView.frameElement;
 
 	if(!frame) {
-		Document = document;
+		targetDocument = document;
 		Window = window;
 	}
 	else {
 		Window = frame.contentWindow;
-		Document = Window.document || Window.contentDocument;
+		targetDocument = Window.document || Window.contentDocument;
 	}
 	
 	let eventListeners = windows.get(Window);
@@ -60,18 +59,18 @@ function init({ element, selector, eventType, targetSelector, targetDocument, on
 		
 	if( eventListeners.indexOf(eventType) == -1) {
 		eventListeners.push(eventType);
-		initEvents(Window, Document, eventType);
+		initEvents(Window, targetDocument, eventType);
     	windows.set(Window, eventListeners);
 	}
 
-	toolbars.push({ element, selector, eventType, targetSelector, Document, onEvent });
+	toolbars.push({ element, selector, eventType, targetSelector, targetDocument, onEvent });
 }
 
-function initEvents(Window, Document, eventType){
+function initEvents(Window, targetDocument, eventType){
 	let continer = [];
 	// let watch;
 
-	Document.addEventListener(eventType, (e) => {
+	targetDocument.addEventListener(eventType, (e) => {
 		// if (e.type == 'selectionchange')
 		// 	if (!hasSelection(e.target.parentElement)) return;
 		if ((e.target.nodeName != '#text') || (e.target.nodeName != '#document'))
@@ -81,7 +80,7 @@ function initEvents(Window, Document, eventType){
 	
 		// if (continer.lastElement.type == 'selectstart' || continer.lastElement.type == 'selectchange')
 		// 	if (e.target.ownerDocument == continer.lastElement.target.ownerDocument)
-		// 	hideToolbar(continer.lastElement.target.ownerDocument, continer.lastElement.type)
+		// 	hide(continer.lastElement.target.ownerDocument, continer.lastElement.type)
 		continer.lastElement = continer.element;
 		continer.element = e;
 		findToolbar(e);
@@ -93,19 +92,16 @@ function initEvents(Window, Document, eventType){
 		continer.element && findToolbar(continer.element)
 	);
 	
-		Window.observer = observer.init({
-		// Window.observer = observer;
-		// Window.observer.init({
-		    name: 'CoCreateToolbar',
-		    observe: ['addedNodes'],
-		    callback (mutation) {
-				if (!continer.element) return;
-		        // if (mutation.target == continer.element.target)
-		        if (mutation.target.getAttribute('element_id') == continer.element.target.getAttribute('element_id'))
-		        	findToolbar(continer.element);
-		    }
-		});
-	// }
+	Window.observer = observer.init({
+	    name: 'CoCreateToolbar',
+	    observe: ['addedNodes'],
+	    callback (mutation) {
+			if (!continer.element) return;
+	        // if (mutation.target == continer.element.target)
+	        if (mutation.target.getAttribute('element_id') == continer.element.target.getAttribute('element_id'))
+	        	findToolbar(continer.element);
+	    }
+	});
 }
 
 /*global ResizeObserver*/
@@ -125,66 +121,68 @@ function findToolbar(e) {
 	for(let toolbar of toolbars) {
 		// let target = e.target;
 		
-		if (toolbar.Document == target.ownerDocument && toolbar.eventType == e.type) {
+		if (toolbar.targetDocument == target.ownerDocument && toolbar.eventType == e.type) {
 			if (toolbar.onEvent) {
-				let r = toolbar.onEvent(target, e.type);
-				if (Array.isArray(r)) {
+				// let r = toolbar.onEvent(target, e.type);
+				// if (Array.isArray(r)) {
+				if (toolbar.onEvent(target, e.type)) {
 					toolbar.target = target;
-					showToolbar(toolbar);
+					toolbar.element.toolbar = {target: target};
+					show(toolbar.element);
 				} 
 				else
-					hideToolbar(toolbar.Document, e.type)
+					hide(toolbar.element)
 			}
 			else {
 				toolbar.target = target.closest(toolbar.targetSelector);
 				if(!toolbar.target) {
-					hideToolbar(toolbar.Document, e.type)
+					hide(toolbar.element)
 					continue;
 				}
-				showToolbar(toolbar);
+				toolbar.element.toolbar = {target: target};
+				show(toolbar.element);
 			}
 		}
 	}
 }
 
-function showToolbar(toolbar){
-	let target = toolbar.target;
+function show(toolbar){
+	// let box = toolbar;
+	let target = toolbar.toolbar.target;
 	let tagName = target.tagName;
-	let box = toolbar.element;
-	box.toolbar = {target: target};
-	
-	let frameElement = toolbar.Document.defaultView.frameElement;
+	let targetWindow = target.ownerDocument.defaultView;
+
+	let frameElement = targetWindow.frameElement;
 	if(!frameElement)
 		frameElement = { offsetTop: 0, offsetLeft: 0 };
 
-	let Window = toolbar.Document.defaultView;
-	let bar = box.querySelector(":scope .tools, :scope tools");
+	let bar = toolbar.querySelector(":scope .tools, :scope tools");
 	if(!bar) bar = { offsetHeight: 0 };
-	let tagNameEl = box.querySelector(":scope [tagName]");
+	let tagNameEl = toolbar.querySelector(":scope [tagName]");
 
 	let elPosition = getPosition(target);
-	box.style.display = "block";
-	box.style.top =
+	toolbar.style.display = "block";
+	toolbar.style.top =
 		frameElement.offsetTop +
 		elPosition.top -
-		Window.scrollY -
+		targetWindow.scrollY -
 		bar.offsetHeight +
 		"px";
-	box.style.left =
+	toolbar.style.left =
 		frameElement.offsetLeft +
 		elPosition.left +
-		Window.scrollX +
+		targetWindow.scrollX +
 		"px";
-	box.style.width = target.offsetWidth + "px";
-	box.style.height = target.offsetHeight + "px";
+	toolbar.style.width = target.offsetWidth + "px";
+	toolbar.style.height = target.offsetHeight + "px";
 
 	if(target.offsetTop - bar.offsetHeight < 0)
-		box.setAttribute("toolbar-overflow", "");
-	else box.removeAttribute("toolbar-overflow");
+		toolbar.setAttribute("toolbar-overflow", "");
+	else toolbar.removeAttribute("toolbar-overflow");
 
 	if(tagName && tagNameEl) {
-	    if(toolbar.tagName) {
-	        tagNameEl.innerHTML = toolbar.tagName;
+	    if(toolbar.toolbar.tagName) {
+	        tagNameEl.innerHTML = toolbar.toolbar.tagName;
 	    } 
 	    else
 	    	tagNameEl.innerHTML = tagName;
@@ -192,13 +190,9 @@ function showToolbar(toolbar){
 
 }
 
-function hideToolbar(Document, type) {
-	for(let toolbar of toolbars) {
-		if(toolbar.eventType == type && toolbar.Document == Document)
-			toolbar.element.style.display = "none";
-			toolbar.toolbar = {target: ''};
-
-	}
+function hide(toolbar) {
+	toolbar.style.display = "none";
+	toolbar.toolbar = {target: ''};
 }
 
 function getPosition(el) {
@@ -220,4 +214,4 @@ function getPosition(el) {
 initToolbar();
 
 
-export default { init, showToolbar };
+export default { init, show, hide };
