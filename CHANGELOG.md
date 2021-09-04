@@ -1,3 +1,11 @@
+## [1.4.2](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.1...v1.4.2) (2021-09-04)
+
+
+### Bug Fixes
+
+* add properties to toolbar element ([5aed2dd](https://github.com/CoCreate-app/CoCreate-toolbar/commit/5aed2dd3134e7da96656aa853fe38fc5b2cc8e43))
+* update dependencies ([0397f33](https://github.com/CoCreate-app/CoCreate-toolbar/commit/0397f337beef068bf01f2b8c0a7a3eed045d2e51))
+
 ## [1.4.1](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.0...v1.4.1) (2021-08-31)
 
 
