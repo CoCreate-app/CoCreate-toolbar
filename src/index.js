@@ -68,7 +68,7 @@ function init({ element, selector, eventType, targetSelector, targetDocument, on
 
 function initEvents(Window, targetDocument, eventType){
 	let continer = [];
-	// let watch;
+	let watch;
 
 	targetDocument.addEventListener(eventType, (e) => {
 		// if (e.type == 'selectionchange')
@@ -85,6 +85,12 @@ function initEvents(Window, targetDocument, eventType){
 		continer.element = e;
 		findToolbar(e);
 		// resizeOb()
+		if (continer.element){
+			if(watch)
+				watch.unobserve(continer.lastElement.target)
+			watch = new ResizeObserver(() => continer.element && findToolbar(continer.element));
+			watch.observe(continer.element.target);
+		}
 	});
 
 	Window.addEventListener("scroll",
