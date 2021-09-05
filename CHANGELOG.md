@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.2...v1.4.3) (2021-09-05)
+
+
+### Bug Fixes
+
+* resizeObserver ([8c027af](https://github.com/CoCreate-app/CoCreate-toolbar/commit/8c027afcb927a2a38bdec67998b3631fd22792d0))
+
 ## [1.4.2](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.1...v1.4.2) (2021-09-04)
 
 
