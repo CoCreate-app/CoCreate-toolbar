@@ -1,9 +1,9 @@
+/*global CoCreate, ResizeObserver*/
 import observer from '@cocreate/observer';
 
 let windows = new Map();
 let toolbars = [];
-let watch;
-	
+
 function initToolbar() {
 	let elements = document.querySelectorAll('[toolbar-target]');
 	initElements(elements);
@@ -21,7 +21,7 @@ async function initElement(element) {
 	if(targetSelector.indexOf(';') !== -1) {
 		let documentSelector;
 		[documentSelector, targetSelector] = targetSelector.split(';');
-		let frame = document.querySelector(documentSelector)
+		let frame = document.querySelector(documentSelector);
 		targetDocument = frame.contentDocument;
 	}
 
@@ -87,7 +87,7 @@ function initEvents(Window, targetDocument, eventType){
 		// resizeOb()
 		if (container.element){
 			if(watch)
-				watch.unobserve(container.lastElement.target)
+				watch.unobserve(container.lastElement.target);
 			watch = new ResizeObserver(() => container.element && findToolbar(container.element));
 			watch.observe(container.element.target);
 		}
@@ -111,20 +111,11 @@ function initEvents(Window, targetDocument, eventType){
 	}
 }
 
-/*global ResizeObserver*/
-function resizeOb() {
-	if (container.element){
-		if(watch)
-			watch.unobserve(container.lastElement.target)
-		watch = new ResizeObserver(() => container.element && findToolbar(container.element));
-		watch.observe(container.element.target);
-	}
-}
 
 function findToolbar(e) {
 	let target = e.target;
 	if (e.target.nodeName == '#text')
-		target = e.target.parentElement
+		target = e.target.parentElement;
 	for(let toolbar of toolbars) {
 		// let target = e.target;
 		
@@ -138,12 +129,12 @@ function findToolbar(e) {
 					show(toolbar.element);
 				} 
 				else
-					hide(toolbar.element)
+					hide(toolbar.element);
 			}
 			else {
 				toolbar.target = target.closest(toolbar.targetSelector);
 				if(!toolbar.target) {
-					hide(toolbar.element)
+					hide(toolbar.element);
 					continue;
 				}
 				toolbar.element.toolbar = {target: target};
@@ -154,7 +145,6 @@ function findToolbar(e) {
 }
 
 function show(toolbar){
-	// let box = toolbar;
 	let target = toolbar.toolbar.target;
 	let tagName = target.tagName;
 	let targetWindow = target.ownerDocument.defaultView;
