@@ -67,7 +67,7 @@ function init({ element, selector, eventType, targetSelector, targetDocument, on
 }
 
 function initEvents(Window, targetDocument, eventType){
-	let continer = [];
+	let container = [];
 	let watch;
 
 	targetDocument.addEventListener(eventType, (e) => {
@@ -78,45 +78,46 @@ function initEvents(Window, targetDocument, eventType){
 		if (e.type == 'selectstart' || e.type == 'selectionchange')
 			if (!CoCreate.text.hasSelection(e.target.parentElement)) return;
 	
-		// if (continer.lastElement.type == 'selectstart' || continer.lastElement.type == 'selectchange')
-		// 	if (e.target.ownerDocument == continer.lastElement.target.ownerDocument)
-		// 	hide(continer.lastElement.target.ownerDocument, continer.lastElement.type)
-		continer.lastElement = continer.element;
-		continer.element = e;
+		// if (container.lastElement.type == 'selectstart' || container.lastElement.type == 'selectchange')
+		// 	if (e.target.ownerDocument == container.lastElement.target.ownerDocument)
+		// 	hide(container.lastElement.target.ownerDocument, container.lastElement.type)
+		container.lastElement = container.element;
+		container.element = e;
 		findToolbar(e);
 		// resizeOb()
-		if (continer.element){
+		if (container.element){
 			if(watch)
-				watch.unobserve(continer.lastElement.target)
-			watch = new ResizeObserver(() => continer.element && findToolbar(continer.element));
-			watch.observe(continer.element.target);
+				watch.unobserve(container.lastElement.target)
+			watch = new ResizeObserver(() => container.element && findToolbar(container.element));
+			watch.observe(container.element.target);
 		}
 	});
 
-	Window.addEventListener("scroll",
-		() =>
-		continer.element && findToolbar(continer.element)
-	);
+	Window.addEventListener("scroll", scroll, {passive:false});
 	
 	Window.observer = observer.init({
 	    name: 'CoCreateToolbar',
 	    observe: ['addedNodes'],
 	    callback (mutation) {
-			if (!continer.element) return;
-	        // if (mutation.target == continer.element.target)
-	        if (mutation.target.getAttribute('element_id') == continer.element.target.getAttribute('element_id'))
-	        	findToolbar(continer.element);
+			if (!container.element) return;
+	        // if (mutation.target == container.element.target)
+	        if (mutation.target.getAttribute('element_id') == container.element.target.getAttribute('element_id'))
+	        	findToolbar(container.element);
 	    }
 	});
+	
+	function scroll() {
+		container.element && findToolbar(container.element);
+	}
 }
 
 /*global ResizeObserver*/
 function resizeOb() {
-	if (continer.element){
+	if (container.element){
 		if(watch)
-			watch.unobserve(continer.lastElement.target)
-		watch = new ResizeObserver(() => continer.element && findToolbar(continer.element));
-		watch.observe(continer.element.target);
+			watch.unobserve(container.lastElement.target)
+		watch = new ResizeObserver(() => container.element && findToolbar(container.element));
+		watch.observe(container.element.target);
 	}
 }
 
