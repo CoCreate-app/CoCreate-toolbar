@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.3...v1.4.4) (2021-09-06)
+
+
+### Bug Fixes
+
+* scroll passive so that toolbar can reposition during scroll ([48e4e14](https://github.com/CoCreate-app/CoCreate-toolbar/commit/48e4e14963d04b181df826cd94cf5461e620951a))
+
 ## [1.4.3](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.2...v1.4.3) (2021-09-05)
 
 
