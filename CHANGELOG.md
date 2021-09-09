@@ -1,3 +1,10 @@
+## [1.4.8](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.7...v1.4.8) (2021-09-09)
+
+
+### Bug Fixes
+
+* ci docs ([9b55e74](https://github.com/CoCreate-app/CoCreate-toolbar/commit/9b55e74c2819f958f2c29b8d26274823df3cdba8))
+
 ## [1.4.7](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.6...v1.4.7) (2021-09-09)
 
 
