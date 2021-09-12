@@ -1,3 +1,10 @@
+## [1.4.10](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.9...v1.4.10) (2021-09-12)
+
+
+### Bug Fixes
+
+* update sidenav to use resize and toggle ([062c04f](https://github.com/CoCreate-app/CoCreate-toolbar/commit/062c04f012ab75fa964e9e1b3e1b6adb7e4806a7))
+
 ## [1.4.9](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.8...v1.4.9) (2021-09-09)
 
 
