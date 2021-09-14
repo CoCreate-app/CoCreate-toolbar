@@ -1,3 +1,10 @@
+## [1.4.12](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.11...v1.4.12) (2021-09-14)
+
+
+### Bug Fixes
+
+* add cocreate.app to domains ([cbbb60a](https://github.com/CoCreate-app/CoCreate-toolbar/commit/cbbb60ab2f3d42d4a30b3d3623ce66df24f4dab0))
+
 ## [1.4.11](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.10...v1.4.11) (2021-09-13)
 
 
