@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.14...v1.5.0) (2021-09-30)
+
+
+### Features
+
+* traverseElements to move toobar to next or previous element ([0351e3e](https://github.com/CoCreate-app/CoCreate-toolbar/commit/0351e3e1a5ede5b4c58718f9a79650d3bd6299fa))
+
 ## [1.4.14](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.4.13...v1.4.14) (2021-09-28)
 
 
