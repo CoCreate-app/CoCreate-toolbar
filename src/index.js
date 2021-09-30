@@ -1,5 +1,6 @@
 /*global CoCreate, ResizeObserver*/
 import observer from '@cocreate/observer';
+import './traverseElement';
 
 let windows = new Map();
 let toolbars = [];
@@ -209,6 +210,5 @@ function getPosition(el) {
 }
 
 initToolbar();
-
 
 export default { init, show, hide };
