@@ -1,5 +1,5 @@
-/*globals CoCreate, CustomEvent*/
-// import action from '@cocreate/action';
+/*globals CustomEvent*/
+import action from '@cocreate/action';
 
 export function  nextElement(btn) {
 	let element = btn.closest('toolbar, .toolbar');
@@ -41,7 +41,7 @@ export function  previousElement(btn) {
     targetElement.ownerDocument.dispatchEvent(clickEvent);
 }
 
-CoCreate.action.init({
+action.init({
 	action: "nextElement",
 	endEvent: "nextElement",
 	callback: (btn, data) => {
@@ -49,7 +49,7 @@ CoCreate.action.init({
 	}
 });
 
-CoCreate.action.init({
+action.init({
 	action: "previousElement",
 	endEvent: "previousElement",
 	callback: (btn, data) => {

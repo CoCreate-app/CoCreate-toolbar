@@ -1,5 +1,6 @@
 /*global CoCreate, ResizeObserver*/
 import observer from '@cocreate/observer';
+import {checkElementConfig} from '@cocreate/element-config';
 import './traverseElement';
 
 let windows = new Map();
@@ -122,9 +123,19 @@ function findToolbar(e) {
 		
 		if (toolbar.targetDocument == target.ownerDocument && toolbar.eventType == e.type) {
 			if (toolbar.onEvent) {
-				// let r = toolbar.onEvent(target, e.type);
-				// if (Array.isArray(r)) {
 				if (toolbar.onEvent(target, e.type)) {
+					toolbar.target = target;
+					toolbar.element.toolbar = {target: target};
+					show(toolbar.element);
+				} 
+				else
+					hide(toolbar.element);
+			}
+			else if (toolbar.element.hasAttribute('config-key')) {
+				let option = toolbar.element.getAttribute('config-key');
+				if (!option)
+					option = e.type;
+				if (checkElementConfig(target, [option])) {
 					toolbar.target = target;
 					toolbar.element.toolbar = {target: target};
 					show(toolbar.element);
