@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.5.2...v1.6.0) (2021-10-04)
+
+
+### Features
+
+* supports @ccreate/element-config ([7dcceb5](https://github.com/CoCreate-app/CoCreate-toolbar/commit/7dcceb5d6a9b9c89bdbfb0632b7640d6802eb4dc))
+
 ## [1.5.2](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.5.1...v1.5.2) (2021-10-01)
 
 
