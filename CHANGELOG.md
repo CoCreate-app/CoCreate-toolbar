@@ -1,3 +1,11 @@
+## [1.6.3](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.6.2...v1.6.3) (2021-10-05)
+
+
+### Bug Fixes
+
+* update dependencies ([08a8619](https://github.com/CoCreate-app/CoCreate-toolbar/commit/08a861973d4fa88ef52e5e2a773a0cdf32cb3f93))
+* website_id in CoCreate.config ([0521d37](https://github.com/CoCreate-app/CoCreate-toolbar/commit/0521d37bbe48d08a6ee56a7c96773853b50c1b74))
+
 ## [1.6.2](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.6.1...v1.6.2) (2021-10-04)
 
 
