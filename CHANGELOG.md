@@ -1,3 +1,10 @@
+## [1.6.10](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.6.9...v1.6.10) (2021-10-16)
+
+
+### Bug Fixes
+
+* update socket package to fix bug in docs ([d399b35](https://github.com/CoCreate-app/CoCreate-toolbar/commit/d399b35501686b2eec6d92bfc5a6e2a8b2c46c67))
+
 ## [1.6.9](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.6.8...v1.6.9) (2021-10-15)
 
 
