@@ -24,7 +24,8 @@ async function initElement(element) {
 		let documentSelector;
 		[documentSelector, targetSelector] = targetSelector.split(';');
 		let frame = document.querySelector(documentSelector);
-		targetDocument = frame.contentDocument;
+		if (frame)
+		 	targetDocument = frame.contentDocument;
 	}
 
 	let event = element.getAttribute('toolbar-event');
