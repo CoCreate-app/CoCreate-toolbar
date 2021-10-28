@@ -103,8 +103,7 @@ function initEvents(Window, targetDocument, eventType){
 	    observe: ['addedNodes'],
 	    callback (mutation) {
 			if (!container.element) return;
-	        // if (mutation.target == container.element.target)
-	        if (mutation.target.getAttribute('element_id') == container.element.target.getAttribute('element_id'))
+	        if (mutation.target == container.element.target)
 	        	findToolbar(container.element);
 	    }
 	});
