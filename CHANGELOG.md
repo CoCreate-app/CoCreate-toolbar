@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.6.11...v1.7.0) (2021-10-29)
+
+
+### Bug Fixes
+
+* if cant find frame do nothing when using frame selector ([bdc5094](https://github.com/CoCreate-app/CoCreate-toolbar/commit/bdc50947802b50fd57f32d14aee11373446aca9a))
+
+
+### Features
+
+* removed the element_id requirement ([f20b26b](https://github.com/CoCreate-app/CoCreate-toolbar/commit/f20b26ba8b06ec957f1474ffe613c42d6ba9b3db))
+
 ## [1.6.11](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.6.10...v1.6.11) (2021-10-17)
 
 
