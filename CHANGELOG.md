@@ -1,3 +1,10 @@
+## [1.7.6](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.5...v1.7.6) (2021-11-06)
+
+
+### Bug Fixes
+
+* update dependencies ([5552fdc](https://github.com/CoCreate-app/CoCreate-toolbar/commit/5552fdce5200e4e3b2f0d1f4433aee6c61982250))
+
 ## [1.7.5](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.4...v1.7.5) (2021-11-04)
 
 
