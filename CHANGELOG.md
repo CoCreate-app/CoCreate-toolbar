@@ -1,3 +1,11 @@
+## [1.7.15](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.14...v1.7.15) (2021-11-26)
+
+
+### Bug Fixes
+
+* docs sidenav width ([5a298c1](https://github.com/CoCreate-app/CoCreate-toolbar/commit/5a298c181093a9742c027a59a16fc0ee83c772fd))
+* updated action dependency to actions ([f50fddf](https://github.com/CoCreate-app/CoCreate-toolbar/commit/f50fddfbd511fcbef0420ca6a10ea39701a37f67))
+
 ## [1.7.14](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.13...v1.7.14) (2021-11-26)
 
 
