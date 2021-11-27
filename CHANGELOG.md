@@ -1,3 +1,10 @@
+## [1.7.16](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.15...v1.7.16) (2021-11-27)
+
+
+### Bug Fixes
+
+* update docs api and cocreateJS script ([fb5f57c](https://github.com/CoCreate-app/CoCreate-toolbar/commit/fb5f57c3b6d04f15b2c3cbfb1788728f06bafb2a))
+
 ## [1.7.15](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.14...v1.7.15) (2021-11-26)
 
 
