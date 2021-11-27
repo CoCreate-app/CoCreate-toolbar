@@ -1,5 +1,5 @@
 /*globals CustomEvent*/
-import action from '@cocreate/action';
+import action from '@cocreate/actions';
 
 export function  nextElement(btn) {
 	let element = btn.closest('toolbar, .toolbar');
