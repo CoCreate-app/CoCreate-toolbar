@@ -1,3 +1,11 @@
+## [1.7.18](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.17...v1.7.18) (2021-11-27)
+
+
+### Bug Fixes
+
+* actions import typo ([963baf9](https://github.com/CoCreate-app/CoCreate-toolbar/commit/963baf9a82246d9dbb996af04c3b098d02b49d67))
+* update dependencies ([0c33e2b](https://github.com/CoCreate-app/CoCreate-toolbar/commit/0c33e2b03903f56da0d036ad665ba5e65d2bbb37))
+
 ## [1.7.17](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.16...v1.7.17) (2021-11-27)
 
 
