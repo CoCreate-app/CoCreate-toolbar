@@ -1,3 +1,10 @@
+## [1.7.19](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.18...v1.7.19) (2021-12-08)
+
+
+### Bug Fixes
+
+* update to receive config that is returned by elementConfig ([e2a3216](https://github.com/CoCreate-app/CoCreate-toolbar/commit/e2a32165a451084d3a614ec96a682ef9d65cc633))
+
 ## [1.7.18](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.17...v1.7.18) (2021-11-27)
 
 
