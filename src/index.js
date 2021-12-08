@@ -135,9 +135,10 @@ function findToolbar(e) {
 				let option = toolbar.element.getAttribute('config-key');
 				if (!option)
 					option = e.type;
-				if (checkElementConfig(target, [option])) {
+				let config = checkElementConfig(target, [option]);
+				if (config) {
 					toolbar.target = target;
-					toolbar.element.toolbar = {target: target};
+					toolbar.element.toolbar = {target: target, label: config.label};
 					show(toolbar.element);
 				} 
 				else
@@ -190,11 +191,10 @@ function show(toolbar){
 	else toolbar.removeAttribute("toolbar-overflow");
 
 	if(tagName && tagNameEl) {
-	    if(toolbar.toolbar.tagName) {
-	        tagNameEl.innerHTML = toolbar.toolbar.tagName;
-	    } 
-	    else
-	    	tagNameEl.innerHTML = tagName;
+		let label = toolbar.toolbar.label;
+		if (label)
+			label = label.replace('{{tagName}}', tagName);
+        tagNameEl.innerHTML = label || tagName;
 	}
 
 }
