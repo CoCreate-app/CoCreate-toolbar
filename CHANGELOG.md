@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.22...v1.8.0) (2022-01-25)
+
+
+### Features
+
+* finds closest hoverable and selectable element ([9e279a6](https://github.com/CoCreate-app/CoCreate-toolbar/commit/9e279a6bbb7566c861eeedf3098aa1daaa50ae27))
+
 ## [1.7.22](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.7.21...v1.7.22) (2022-01-01)
 
 
