@@ -135,7 +135,13 @@ function findToolbar(e) {
 				let option = toolbar.element.getAttribute('config-key');
 				if (!option)
 					option = e.type;
-				let config = checkElementConfig(target, [option]);
+				let config;
+				do {
+					config = checkElementConfig(target, [option]);
+					if (!config)
+						target = target.parentElement	
+				} while (!config && target);
+				
 				if (config) {
 					toolbar.target = target;
 					toolbar.element.toolbar = {target: target, label: config.label};
