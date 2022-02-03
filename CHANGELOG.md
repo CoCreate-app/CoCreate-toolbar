@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.1...v1.8.2) (2022-02-03)
+
+
+### Bug Fixes
+
+* replaced show and hide class hidden with attribute hidden ([623e10b](https://github.com/CoCreate-app/CoCreate-toolbar/commit/623e10bbcac28988280587ad5cfeb83d0f310f35))
+
 ## [1.8.1](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.0...v1.8.1) (2022-02-01)
 
 
