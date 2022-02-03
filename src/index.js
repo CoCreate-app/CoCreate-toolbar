@@ -108,9 +108,20 @@ function initEvents(Window, targetDocument, eventType){
 	    }
 	});
 	
+	// ToDo: observer needs to support targeting another document
+	// targetDocument.observer = observer.init({
+	//     name: 'CoCreateToolbar',
+	//     observe: ['removedNodes'],
+	//     callback (mutation) {
+	//         if (mutation.target.toolbar)
+	// 			hide(mutation.target.toolbar.element)
+	//     }
+	// });
+	
 	function scroll() {
 		container.element && findToolbar(container.element);
 	}
+
 }
 
 
