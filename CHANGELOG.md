@@ -1,3 +1,10 @@
+## [1.8.5](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.4...v1.8.5) (2022-02-16)
+
+
+### Bug Fixes
+
+* update action param to name ([ec974c3](https://github.com/CoCreate-app/CoCreate-toolbar/commit/ec974c3e15674ab202cad5b892592391fc04adca))
+
 ## [1.8.4](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.3...v1.8.4) (2022-02-10)
 
 
