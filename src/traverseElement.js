@@ -42,7 +42,7 @@ export function  previousElement(btn) {
 }
 
 action.init({
-	action: "nextElement",
+	name: "nextElement",
 	endEvent: "nextElement",
 	callback: (btn, data) => {
 		nextElement(btn);
@@ -50,7 +50,7 @@ action.init({
 });
 
 action.init({
-	action: "previousElement",
+	name: "previousElement",
 	endEvent: "previousElement",
 	callback: (btn, data) => {
 		previousElement(btn);
