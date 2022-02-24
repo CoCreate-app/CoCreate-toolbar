@@ -14,7 +14,7 @@ module.exports = {
                 "name": "index.html",
                 "path": "/docs/toolbar/index.html",
                 "domains": [
-                    "cocreate.app",
+                    "*",
                     "general.cocreate.app"
                 ],
                 "directory": "/docs/toolbar",
