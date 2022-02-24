@@ -1,3 +1,10 @@
+## [1.8.7](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.6...v1.8.7) (2022-02-24)
+
+
+### Bug Fixes
+
+* CoCreate.config replace CoCreate.app with * ([8c77f6f](https://github.com/CoCreate-app/CoCreate-toolbar/commit/8c77f6f712fae566fde650d81d0f68a0b4f19242))
+
 ## [1.8.6](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.5...v1.8.6) (2022-02-16)
 
 
