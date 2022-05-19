@@ -1,3 +1,10 @@
+## [1.8.9](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.8...v1.8.9) (2022-05-19)
+
+
+### Bug Fixes
+
+* update document_id on link index.css ([b17cb71](https://github.com/CoCreate-app/CoCreate-toolbar/commit/b17cb71baaf6a6d6402719957801e0c237e9a678))
+
 ## [1.8.8](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.7...v1.8.8) (2022-05-06)
 
 
