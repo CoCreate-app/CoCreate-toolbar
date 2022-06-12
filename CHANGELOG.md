@@ -1,3 +1,11 @@
+## [1.8.11](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.10...v1.8.11) (2022-06-12)
+
+
+### Bug Fixes
+
+* update dependencies ([9a67bf5](https://github.com/CoCreate-app/CoCreate-toolbar/commit/9a67bf524a490a53b1a130e309eba5b805094518))
+* update docs css document_id ([b7b4706](https://github.com/CoCreate-app/CoCreate-toolbar/commit/b7b4706c35924c8ae2748d01c61e7f67f8a8ad09))
+
 ## [1.8.10](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.9...v1.8.10) (2022-05-23)
 
 
