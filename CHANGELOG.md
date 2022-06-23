@@ -1,3 +1,10 @@
+## [1.8.13](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.12...v1.8.13) (2022-06-23)
+
+
+### Bug Fixes
+
+* if !target return ([8057ded](https://github.com/CoCreate-app/CoCreate-toolbar/commit/8057ded0979c1a6a2e3780f22b9827287781ed3c))
+
 ## [1.8.12](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.11...v1.8.12) (2022-06-18)
 
 
