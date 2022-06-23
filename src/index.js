@@ -129,6 +129,7 @@ function findToolbar(e) {
 	let target = e.target;
 	if (e.target.nodeName == '#text')
 		target = e.target.parentElement;
+	if (!target) return;
 	for(let toolbar of toolbars) {
 		// let target = e.target;
 		
