@@ -1,3 +1,10 @@
+## [1.8.14](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.13...v1.8.14) (2022-07-31)
+
+
+### Bug Fixes
+
+* if document or text do not check for attribute ([6c2d487](https://github.com/CoCreate-app/CoCreate-toolbar/commit/6c2d48799d0d72460e5369d40a0a9cafb1b3c407))
+
 ## [1.8.13](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.12...v1.8.13) (2022-06-23)
 
 
