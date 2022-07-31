@@ -76,10 +76,10 @@ function initEvents(Window, targetDocument, eventType){
 	targetDocument.addEventListener(eventType, (e) => {
 		// if (e.type == 'selectionchange')
 		// 	if (!hasSelection(e.target.parentElement)) return;
-		if ((e.target.nodeName != '#text') || (e.target.nodeName != '#document'))
+		if ((e.target.nodeName != '#text') && (e.target.nodeName != '#document'))
 			if (e.target.hasAttribute('toolbar-target')) return;
 		if (e.type == 'selectstart' || e.type == 'selectionchange')
-			if (!CoCreate.text.hasSelection(e.target.parentElement)) return;
+			if (CoCreate.text && !CoCreate.text.hasSelection(e.target.parentElement)) return;
 	
 		// if (container.lastElement.type == 'selectstart' || container.lastElement.type == 'selectchange')
 		// 	if (e.target.ownerDocument == container.lastElement.target.ownerDocument)
