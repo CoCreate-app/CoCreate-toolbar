@@ -1,3 +1,10 @@
+## [1.8.15](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.14...v1.8.15) (2022-08-18)
+
+
+### Bug Fixes
+
+* change variable name target to ctarget during do while loop ([57bcf5a](https://github.com/CoCreate-app/CoCreate-toolbar/commit/57bcf5ab0b73b295a1d026433d570291bd23f878))
+
 ## [1.8.14](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.13...v1.8.14) (2022-07-31)
 
 
