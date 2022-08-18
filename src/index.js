@@ -144,15 +144,16 @@ function findToolbar(e) {
 					hide(toolbar.element);
 			}
 			else if (toolbar.element.hasAttribute('config-key')) {
+				let ctarget = target;
 				let option = toolbar.element.getAttribute('config-key');
 				if (!option)
 					option = e.type;
 				let config;
 				do {
-					config = checkElementConfig(target, [option]);
+					config = checkElementConfig(ctarget, [option]);
 					if (!config)
-						target = target.parentElement	
-				} while (!config && target);
+						ctarget = ctarget.parentElement	
+				} while (!config && ctarget);
 				
 				if (config) {
 					toolbar.target = target;
