@@ -1,3 +1,10 @@
+## [1.8.27](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.26...v1.8.27) (2022-11-21)
+
+
+### Bug Fixes
+
+* replaced document_id with document._id ([7a8ed2b](https://github.com/CoCreate-app/CoCreate-toolbar/commit/7a8ed2bf9f953edecc347fb068feb33131d9fb62))
+
 ## [1.8.26](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.25...v1.8.26) (2022-11-21)
 
 
