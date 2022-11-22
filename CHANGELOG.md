@@ -1,3 +1,10 @@
+## [1.8.30](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.29...v1.8.30) (2022-11-22)
+
+
+### Bug Fixes
+
+* workflow docs ([6dd94cd](https://github.com/CoCreate-app/CoCreate-toolbar/commit/6dd94cdabfd9de9804b23f2ddcb1c917230cd9e2))
+
 ## [1.8.29](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.28...v1.8.29) (2022-11-22)
 
 
