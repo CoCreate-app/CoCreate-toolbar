@@ -1,3 +1,10 @@
+## [1.8.29](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.28...v1.8.29) (2022-11-22)
+
+
+### Bug Fixes
+
+* apply src: {{source}} to CoCreate.config ([ed0628b](https://github.com/CoCreate-app/CoCreate-toolbar/commit/ed0628bd34c6fe26ed1b30b4dbdcd90cb04a3c7f))
+
 ## [1.8.28](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.27...v1.8.28) (2022-11-21)
 
 
