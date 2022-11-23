@@ -20,7 +20,7 @@ async function initElement(element) {
 	let targetSelector = element.getAttribute('toolbar-target');
 	let targetDocument = document;
 
-	if(targetSelector.indexOf(';') !== -1) {
+	if (targetSelector.indexOf(';') !== -1) {
 		let documentSelector;
 		[documentSelector, targetSelector] = targetSelector.split(';');
 		let frame = document.querySelector(documentSelector);
@@ -29,7 +29,7 @@ async function initElement(element) {
 	}
 
 	let event = element.getAttribute('toolbar-event');
-	if(!event)
+	if (!event)
 		event = 'mouseover';
 
 	init({
@@ -48,7 +48,7 @@ function init({ element, selector, eventType, targetSelector, targetDocument, on
 		
 	let Window, frame = targetDocument.defaultView.frameElement;
 
-	if(!frame) {
+	if (!frame) {
 		targetDocument = document;
 		Window = window;
 	}
@@ -58,9 +58,9 @@ function init({ element, selector, eventType, targetSelector, targetDocument, on
 	}
 	
 	let eventListeners = windows.get(Window);
-	if(!eventListeners) eventListeners = [];
+	if (!eventListeners) eventListeners = [];
 		
-	if( eventListeners.indexOf(eventType) == -1) {
+	if ( eventListeners.indexOf(eventType) == -1) {
 		eventListeners.push(eventType);
 		initEvents(Window, targetDocument, eventType);
     	windows.set(Window, eventListeners);
@@ -89,7 +89,7 @@ function initEvents(Window, targetDocument, eventType){
 		findToolbar(e);
 		// resizeOb()
 		if (container.element){
-			if(watch)
+			if (watch)
 				watch.unobserve(container.lastElement.target);
 			watch = new ResizeObserver(() => container.element && findToolbar(container.element));
 			watch.observe(container.element.target);
@@ -165,7 +165,7 @@ function findToolbar(e) {
 			}
 			else {
 				toolbar.target = target.closest(toolbar.targetSelector);
-				if(!toolbar.target) {
+				if (!toolbar.target) {
 					hide(toolbar.element);
 					continue;
 				}
@@ -182,11 +182,11 @@ function show(toolbar){
 	let targetWindow = target.ownerDocument.defaultView;
 
 	let frameElement = targetWindow.frameElement;
-	if(!frameElement)
+	if (!frameElement)
 		frameElement = { offsetTop: 0, offsetLeft: 0 };
 
 	let bar = toolbar.querySelector(":scope .tools, :scope tools");
-	if(!bar) bar = { offsetHeight: 0 };
+	if (!bar) bar = { offsetHeight: 0 };
 	let tagNameEl = toolbar.querySelector(":scope [tagName]");
 
 	let elPosition = getPosition(target);
@@ -205,11 +205,11 @@ function show(toolbar){
 	toolbar.style.width = target.offsetWidth + "px";
 	toolbar.style.height = target.offsetHeight + "px";
 
-	if(target.offsetTop - bar.offsetHeight < 0)
+	if (target.offsetTop - bar.offsetHeight < 0)
 		toolbar.setAttribute("toolbar-overflow", "");
 	else toolbar.removeAttribute("toolbar-overflow");
 
-	if(tagName && tagNameEl) {
+	if (tagName && tagNameEl) {
 		let label = toolbar.toolbar.label;
 		if (label)
 			label = label.replace('{{tagName}}', tagName);
