@@ -1,3 +1,10 @@
+## [1.8.45](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.44...v1.8.45) (2022-12-13)
+
+
+### Bug Fixes
+
+* bump dependencies ([252ccc3](https://github.com/CoCreate-app/CoCreate-toolbar/commit/252ccc3f74864defd6b8fa74df87b3bd5af8f199))
+
 ## [1.8.44](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.43...v1.8.44) (2022-12-12)
 
 
