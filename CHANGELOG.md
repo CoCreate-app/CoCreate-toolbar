@@ -1,3 +1,11 @@
+## [1.8.46](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.45...v1.8.46) (2022-12-15)
+
+
+### Bug Fixes
+
+* add missing dev dependency style-loader ([cbbd83a](https://github.com/CoCreate-app/CoCreate-toolbar/commit/cbbd83a44a90743d72a0e9364d505024f9ff2639))
+* removed un used devDependencies ([0831926](https://github.com/CoCreate-app/CoCreate-toolbar/commit/0831926f26a427f1997e43fafe4cf08813a82c5e))
+
 ## [1.8.45](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.44...v1.8.45) (2022-12-13)
 
 
