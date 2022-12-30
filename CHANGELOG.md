@@ -1,3 +1,10 @@
+## [1.8.55](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.54...v1.8.55) (2022-12-30)
+
+
+### Bug Fixes
+
+* update config sources to use template  braces with entry on src ([3bcb22e](https://github.com/CoCreate-app/CoCreate-toolbar/commit/3bcb22e810c062272d081482e2b61cb8a90d62c9))
+
 ## [1.8.54](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.53...v1.8.54) (2022-12-29)
 
 
