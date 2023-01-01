@@ -1,3 +1,10 @@
+## [1.8.57](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.56...v1.8.57) (2023-01-01)
+
+
+### Bug Fixes
+
+* docs sanbox overflow ([3d10659](https://github.com/CoCreate-app/CoCreate-toolbar/commit/3d106593a67134de144651b1bc5a664c2d4125ef))
+
 ## [1.8.56](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.55...v1.8.56) (2022-12-31)
 
 
