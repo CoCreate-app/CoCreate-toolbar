@@ -1,3 +1,11 @@
+## [1.8.59](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.58...v1.8.59) (2023-01-06)
+
+
+### Bug Fixes
+
+* bump dependencies, worklow [@v3](https://github.com/v3) ([caa16e5](https://github.com/CoCreate-app/CoCreate-toolbar/commit/caa16e5b102c35c9a3e760d8e955f76f7983f489))
+* edit in github btn styles ([6713975](https://github.com/CoCreate-app/CoCreate-toolbar/commit/6713975a01d5f382f8b9dd05c991a99a227db0ac))
+
 ## [1.8.58](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.8.57...v1.8.58) (2023-01-05)
 
 
