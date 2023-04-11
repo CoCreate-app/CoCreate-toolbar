@@ -1,3 +1,10 @@
+## [1.9.4](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.9.3...v1.9.4) (2023-04-11)
+
+
+### Bug Fixes
+
+* renamed domains to hosts ([7601707](https://github.com/CoCreate-app/CoCreate-toolbar/commit/7601707c192784ccb0dcc4942c3242ad13061362))
+
 ## [1.9.3](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.9.2...v1.9.3) (2023-03-30)
 
 
