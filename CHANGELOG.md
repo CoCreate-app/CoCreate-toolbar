@@ -1,3 +1,10 @@
+## [1.9.6](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.9.5...v1.9.6) (2023-04-11)
+
+
+### Bug Fixes
+
+* bump dependencies ([37ea5c5](https://github.com/CoCreate-app/CoCreate-toolbar/commit/37ea5c5c9699ac3d8dba1e4921a5c02abda2c8dc))
+
 ## [1.9.5](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.9.4...v1.9.5) (2023-04-11)
 
 
