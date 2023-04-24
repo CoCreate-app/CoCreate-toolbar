@@ -1,3 +1,11 @@
+## [1.10.3](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.2...v1.10.3) (2023-04-24)
+
+
+### Bug Fixes
+
+* updated worrkflows to v3 and node version 16 ([cf4be1c](https://github.com/CoCreate-app/CoCreate-toolbar/commit/cf4be1c228079c96c27388de6f6cc8831c534f97))
+* workflow node version updated  16 ([21a35e1](https://github.com/CoCreate-app/CoCreate-toolbar/commit/21a35e10e0b35baa703edf0f1430853745f79d8a))
+
 ## [1.10.2](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.1...v1.10.2) (2023-04-24)
 
 
