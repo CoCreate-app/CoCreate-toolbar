@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.9.6...v1.10.0) (2023-04-24)
+
+
+### Features
+
+* added pwa manifest ([cdb4800](https://github.com/CoCreate-app/CoCreate-toolbar/commit/cdb48004bc8434df0b3feadb3f65c0f992fd302d))
+
 ## [1.9.6](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.9.5...v1.9.6) (2023-04-11)
 
 
