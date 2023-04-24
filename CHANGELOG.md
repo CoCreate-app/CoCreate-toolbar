@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.0...v1.10.1) (2023-04-24)
+
+
+### Bug Fixes
+
+* removed uglifyjs-webpack-plugin ([dc8912b](https://github.com/CoCreate-app/CoCreate-toolbar/commit/dc8912b0936a82b54af584afe05774ecb9f2a0d7))
+
 # [1.10.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.9.6...v1.10.0) (2023-04-24)
 
 
