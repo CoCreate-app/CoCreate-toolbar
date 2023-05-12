@@ -108,7 +108,7 @@ function initEvents(Window, targetDocument, eventType){
 	    }
 	});
 	
-	// ToDo: observer needs to support targeting another document
+	// TODO: observer needs to support targeting another document
 	// targetDocument.observer = observer.init({
 	//     name: 'CoCreateToolbar',
 	//     observe: ['removedNodes'],
