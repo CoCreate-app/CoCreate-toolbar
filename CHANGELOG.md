@@ -1,3 +1,10 @@
+## [1.10.8](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.7...v1.10.8) (2023-05-18)
+
+
+### Bug Fixes
+
+* apikey renamed to key ([73b0401](https://github.com/CoCreate-app/CoCreate-toolbar/commit/73b04019f387ac0d6304a549b8e50db350d24e32))
+
 ## [1.10.7](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.6...v1.10.7) (2023-05-06)
 
 
