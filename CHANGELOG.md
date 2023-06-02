@@ -1,3 +1,11 @@
+## [1.10.11](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.10...v1.10.11) (2023-06-02)
+
+
+### Bug Fixes
+
+* format demo html ([98d76dd](https://github.com/CoCreate-app/CoCreate-toolbar/commit/98d76dd41baff6c4305b39fff91e071797f5f6b3))
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([621fb82](https://github.com/CoCreate-app/CoCreate-toolbar/commit/621fb82d9d673d9f719bb0a6adad02751d1718cf))
+
 ## [1.10.10](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.9...v1.10.10) (2023-05-21)
 
 
