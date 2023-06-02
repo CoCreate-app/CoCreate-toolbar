@@ -1,36 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <title>CoCreate-toolbar | CoCreate</title>
 
         <!-- CoCreate Favicon -->
-        <link rel="icon" href="https://cdn.cocreate.app/favicon.ico" type="image/ico" sizes="16x16">
+        <link
+            rel="icon"
+            href="https://cdn.cocreate.app/favicon.ico"
+            type="image/ico"
+            sizes="16x16" />
 
-		<link rel="manifest" href="/manifest.webmanifest" />
-	</head>
+        <link rel="manifest" href="/manifest.webmanifest" />
+    </head>
 
     <body>
         <div class="margin-bottom:100px"></div>
 
         <h1 id="test">Im a test... hover over me</h1>
 
-
         <!-- Collaboration Toolbar -->
-        <div toolbar-placent="top" toolbar-target="#test" toolbar-event="click" class="position:fixed display:none">
+        <div
+            toolbar-placent="top"
+            toolbar-target="#test"
+            toolbar-event="click"
+            class="position:fixed display:none">
             <tools class="width:100%">
-                <span id="bold-button"><i class="height:20px fill:#505050" src="/assets/svg/bold.svg"></i></span>
-                <span id="italic-button"><i class="height:20px fill:#505050" src="/assets/svg/italic.svg"></i></span>
-                <span id="link-button"><i class="height:20px fill:#505050" src="/assets/svg/link.svg"></i></span>
-                <span id="blockquote-button"><i class="height:20px fill:#505050" src="/assets/svg/quote-right.svg"></i></span>
-                <span id="header-1-button"><i class="height:20px fill:#505050" src="/assets/svg/heading.svg"></i><sub>1</sub></span>
-                <span id="header-2-button"><i class="height:20px fill:#505050" src="/assets/svg/heading.svg"></i><sub>2</sub></span>
-                <span hover="display:inline-block" show="#controls" hide="#controls"><i class="height:20px fill:#505050" src="/assets/svg/plus.svg"></i></span>
+                <span id="bold-button"
+                    ><i
+                        class="height:20px fill:#505050"
+                        src="/assets/svg/bold.svg"></i
+                ></span>
+                <span id="italic-button"
+                    ><i
+                        class="height:20px fill:#505050"
+                        src="/assets/svg/italic.svg"></i
+                ></span>
+                <span id="link-button"
+                    ><i
+                        class="height:20px fill:#505050"
+                        src="/assets/svg/link.svg"></i
+                ></span>
+                <span id="blockquote-button"
+                    ><i
+                        class="height:20px fill:#505050"
+                        src="/assets/svg/quote-right.svg"></i
+                ></span>
+                <span id="header-1-button"
+                    ><i
+                        class="height:20px fill:#505050"
+                        src="/assets/svg/heading.svg"></i
+                    ><sub>1</sub></span
+                >
+                <span id="header-2-button"
+                    ><i
+                        class="height:20px fill:#505050"
+                        src="/assets/svg/heading.svg"></i
+                    ><sub>2</sub></span
+                >
+                <span
+                    hover="display:inline-block"
+                    show="#controls"
+                    hide="#controls"
+                    ><i
+                        class="height:20px fill:#505050"
+                        src="/assets/svg/plus.svg"></i
+                ></span>
                 <span id="controls" hidden>
-                    <span id="image-button"><i class="height:20px fill:#505050" src="/assets/svg/camera.svg"></i></span>
-                    <span id="video-button"><i class="height:20px fill:#505050" src="/assets/svg/play.svg"></i></span>
-                    <span id="tweet-button"><i class="height:20px fill:#505050" src="/assets/svg/twitter.svg"></i></span>
-                    <span id="divider-button"><i class="height:20px fill:#505050" src="/assets/svg/minus.svg"></i></span>
+                    <span id="image-button"
+                        ><i
+                            class="height:20px fill:#505050"
+                            src="/assets/svg/camera.svg"></i
+                    ></span>
+                    <span id="video-button"
+                        ><i
+                            class="height:20px fill:#505050"
+                            src="/assets/svg/play.svg"></i
+                    ></span>
+                    <span id="tweet-button"
+                        ><i
+                            class="height:20px fill:#505050"
+                            src="/assets/svg/twitter.svg"></i
+                    ></span>
+                    <span id="divider-button"
+                        ><i
+                            class="height:20px fill:#505050"
+                            src="/assets/svg/minus.svg"></i
+                    ></span>
                 </span>
             </tools>
             <div class="height:100% width:100% pointer-events:none"></div>
@@ -39,7 +94,5 @@
 
         <!--<script src="../dist/CoCreate-toolbar.js"></script>-->
         <script src="https://cdn.cocreate.app/latest/CoCreate.min.js"></script>
-
     </body>
-
 </html>
