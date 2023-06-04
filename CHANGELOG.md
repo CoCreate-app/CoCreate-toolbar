@@ -1,3 +1,11 @@
+## [1.10.13](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.12...v1.10.13) (2023-06-04)
+
+
+### Bug Fixes
+
+* replaced secert GITHUB_TOKEN with GITHUB ([aa38f84](https://github.com/CoCreate-app/CoCreate-toolbar/commit/aa38f84571530fc2720204f2f0055070bf0fed2a))
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([dc12c68](https://github.com/CoCreate-app/CoCreate-toolbar/commit/dc12c6800ff6c47296cfbfc2314ea83eee1986b3))
+
 ## [1.10.12](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.11...v1.10.12) (2023-06-04)
 
 
