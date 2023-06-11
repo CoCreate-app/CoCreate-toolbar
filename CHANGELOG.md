@@ -1,3 +1,10 @@
+## [1.10.25](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.24...v1.10.25) (2023-06-11)
+
+
+### Bug Fixes
+
+* testing workflow ([69e1fca](https://github.com/CoCreate-app/CoCreate-toolbar/commit/69e1fca19cedf1022244363d9bec9279e5ca4984))
+
 ## [1.10.24](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.23...v1.10.24) (2023-06-11)
 
 
