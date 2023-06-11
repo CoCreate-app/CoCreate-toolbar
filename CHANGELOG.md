@@ -1,3 +1,10 @@
+## [1.10.20](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.19...v1.10.20) (2023-06-11)
+
+
+### Bug Fixes
+
+* postintall error ([43de9d5](https://github.com/CoCreate-app/CoCreate-toolbar/commit/43de9d540a9a276dee902d175f11194d910ccb28))
+
 ## [1.10.19](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.18...v1.10.19) (2023-06-11)
 
 
