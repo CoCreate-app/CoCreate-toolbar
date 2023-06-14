@@ -1,3 +1,10 @@
+## [1.10.28](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.27...v1.10.28) (2023-06-14)
+
+
+### Bug Fixes
+
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([1ad6ac8](https://github.com/CoCreate-app/CoCreate-toolbar/commit/1ad6ac8087fe0650d9a156a1b224ead37420fdc0))
+
 ## [1.10.27](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.26...v1.10.27) (2023-06-11)
 
 
