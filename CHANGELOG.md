@@ -1,3 +1,18 @@
+# [1.11.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.28...v1.11.0) (2023-08-16)
+
+
+### Bug Fixes
+
+* crud attributes renamed ([d7c9796](https://github.com/CoCreate-app/CoCreate-toolbar/commit/d7c97961064f0210a4622d17461060f956bb4df0))
+* replace -target -selector ([833ba83](https://github.com/CoCreate-app/CoCreate-toolbar/commit/833ba8393b25eeb8338e63f56ac86116c8b09fc9))
+* updated actions callback data object ([2d154b8](https://github.com/CoCreate-app/CoCreate-toolbar/commit/2d154b817720b419e1f9d386ac03ea31d07af3ff))
+* webpack.config and package.json make use of mode=production instead of process.env ([dcd9531](https://github.com/CoCreate-app/CoCreate-toolbar/commit/dcd9531c86be7043b9b106beb8094049cd36f225))
+
+
+### Features
+
+* name attribute and variable renamed to key ([e221cc3](https://github.com/CoCreate-app/CoCreate-toolbar/commit/e221cc35e62ed2de7d296169382fa58feb673699))
+
 ## [1.10.28](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.10.27...v1.10.28) (2023-06-14)
 
 
