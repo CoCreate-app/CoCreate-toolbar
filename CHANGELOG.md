@@ -1,3 +1,12 @@
+## [1.12.1](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.12.0...v1.12.1) (2023-08-21)
+
+
+### Bug Fixes
+
+* /dist/CoCreate.js updated to https://CoCreate.app/dist/CoCreate.js ([8a734d7](https://github.com/CoCreate-app/CoCreate-toolbar/commit/8a734d72ead7377eb6937cc178ddccdc6a0aee36))
+* replace cdn with /dist ([f0622c3](https://github.com/CoCreate-app/CoCreate-toolbar/commit/f0622c370ef95ee181824a4b8b1dcf796d8c65d6))
+* update file uploader ([5f38119](https://github.com/CoCreate-app/CoCreate-toolbar/commit/5f381190cbbcc15e41bf9a35d026d8bc64bba291))
+
 # [1.12.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.11.0...v1.12.0) (2023-08-17)
 
 
