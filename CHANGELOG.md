@@ -1,3 +1,11 @@
+## [1.14.5](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.14.4...v1.14.5) (2023-11-03)
+
+
+### Bug Fixes
+
+* favicon.ico path ([8383386](https://github.com/CoCreate-app/CoCreate-toolbar/commit/8383386439b09f0483440c1c8255d7b697a32a96))
+* update dependencies to the lates versions ([135286f](https://github.com/CoCreate-app/CoCreate-toolbar/commit/135286f8df5756eb40cb4abffdb34856a9515815))
+
 ## [1.14.4](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.14.3...v1.14.4) (2023-10-25)
 
 
