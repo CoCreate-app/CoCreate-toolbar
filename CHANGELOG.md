@@ -1,3 +1,11 @@
+## [1.14.6](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.14.5...v1.14.6) (2023-11-09)
+
+
+### Bug Fixes
+
+* meta name typo ([4a2e0bb](https://github.com/CoCreate-app/CoCreate-toolbar/commit/4a2e0bbc0f5d6f598565b414b72a83946a03ca00))
+* update host ([bad9c11](https://github.com/CoCreate-app/CoCreate-toolbar/commit/bad9c1187ca54e491faad4c898352500c49fbf55))
+
 ## [1.14.5](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.14.4...v1.14.5) (2023-11-03)
 
 
