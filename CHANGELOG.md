@@ -1,3 +1,15 @@
+# [1.16.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.15.0...v1.16.0) (2023-11-25)
+
+
+### Bug Fixes
+
+* update nav, edit button and css path ([5422eb3](https://github.com/CoCreate-app/CoCreate-toolbar/commit/5422eb361ffbb5de39c682bd338229ad7d8b9151))
+
+
+### Features
+
+* upgrade dependencies for latest features and fixes ([4e83df0](https://github.com/CoCreate-app/CoCreate-toolbar/commit/4e83df04efc241d57bd32cd6c8e7570671794461))
+
 # [1.15.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.14.7...v1.15.0) (2023-11-19)
 
 
