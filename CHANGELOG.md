@@ -1,3 +1,10 @@
+## [1.17.1](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.0...v1.17.1) (2024-02-05)
+
+
+### Bug Fixes
+
+* Removed https://cdn.cocreate.app/latest/CoCreate.min.css ([7519e20](https://github.com/CoCreate-app/CoCreate-toolbar/commit/7519e20d41c2c46a566e68e21c15c8b4f2010e9f))
+
 # [1.17.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.16.0...v1.17.0) (2023-11-25)
 
 
