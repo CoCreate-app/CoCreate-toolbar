@@ -36,7 +36,7 @@ async function initElement(element) {
         element: element,
         selector: '[toolbar-selector]',
         eventType: event,
-        targetSelector: targetSelector,
+        targetSelector: targetSelector.trim(),
         targetDocument: targetDocument,
     });
 
@@ -51,8 +51,7 @@ function init({ element, selector, eventType, targetSelector, targetDocument, on
     if (!frame) {
         targetDocument = document;
         Window = window;
-    }
-    else {
+    } else {
         Window = frame.contentWindow;
         targetDocument = Window.document || Window.contentDocument;
     }
@@ -139,11 +138,9 @@ function findToolbar(e) {
                     toolbar.target = target;
                     toolbar.element.toolbar = { target: target };
                     show(toolbar.element);
-                }
-                else
+                } else
                     hide(toolbar.element);
-            }
-            else if (toolbar.element.hasAttribute('config-key')) {
+            } else if (toolbar.element.hasAttribute('config-key')) {
                 let ctarget = target;
                 let option = toolbar.element.getAttribute('config-key');
                 if (!option)
@@ -159,11 +156,9 @@ function findToolbar(e) {
                     toolbar.target = target;
                     toolbar.element.toolbar = { target: target, label: config.label };
                     show(toolbar.element);
-                }
-                else
+                } else
                     hide(toolbar.element);
-            }
-            else {
+            } else {
                 toolbar.target = target.closest(toolbar.targetSelector);
                 if (!toolbar.target) {
                     hide(toolbar.element);
