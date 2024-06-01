@@ -76,7 +76,7 @@ function initEvents(Window, targetDocument, eventType) {
         // if (e.type == 'selectionchange')
         // 	if (!hasSelection(e.target.parentElement)) return;
         if ((e.target.nodeName != '#text') && (e.target.nodeName != '#document'))
-            if (e.target.hasAttribute('toolbar-selector')) return;
+            if (e.target.closest('[toolbar-selector]')) return;
         if (e.type == 'selectstart' || e.type == 'selectionchange')
             if (CoCreate.text && !CoCreate.text.hasSelection(e.target.parentElement)) return;
 
