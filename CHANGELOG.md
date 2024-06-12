@@ -1,3 +1,13 @@
+## [1.17.3](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.2...v1.17.3) (2024-06-12)
+
+
+### Bug Fixes
+
+* bump cocreate dependencies ([7b4c49c](https://github.com/CoCreate-app/CoCreate-toolbar/commit/7b4c49cc05d3b1b32e3bdc352240b3fe80adb73b))
+* return if closest toolbar-selector ([1622880](https://github.com/CoCreate-app/CoCreate-toolbar/commit/16228809e6ef0504a4a56f0ea63b993cbe2ae862))
+* svg icon class ([2159826](https://github.com/CoCreate-app/CoCreate-toolbar/commit/215982648c67deeab5d3b4f92a39b8a19ed2f647))
+* trim() targetSelector ([3e97021](https://github.com/CoCreate-app/CoCreate-toolbar/commit/3e970217c7f5c4271549c40957d7a44563066769))
+
 ## [1.17.2](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.1...v1.17.2) (2024-04-29)
 
 
