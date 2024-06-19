@@ -1,6 +1,7 @@
 /*global CoCreate, ResizeObserver*/
 import observer from '@cocreate/observer';
 import { checkElementConfig } from '@cocreate/element-config';
+import { hasSelection } from '@cocreate/selection';
 import './traverseElement';
 
 let windows = new Map();
@@ -77,8 +78,13 @@ function initEvents(Window, targetDocument, eventType) {
         // 	if (!hasSelection(e.target.parentElement)) return;
         if ((e.target.nodeName != '#text') && (e.target.nodeName != '#document'))
             if (e.target.closest('[toolbar-selector]')) return;
-        if (e.type == 'selectstart' || e.type == 'selectionchange')
-            if (CoCreate.text && !CoCreate.text.hasSelection(e.target.parentElement)) return;
+        if (e.type == 'selectstart' || e.type == 'selectionchange') {
+            if (e.target.parentElement && CoCreate.text && !hasSelection(e.target.parentElement)) return;
+            const selection = window.getSelection();
+            e = copyEvent(e);
+            e.selection = selection
+            e.target = selection.anchorNode.parentElement
+        }
 
         // if (container.lastElement.type == 'selectstart' || container.lastElement.type == 'selectchange')
         // 	if (e.target.ownerDocument == container.lastElement.target.ownerDocument)
@@ -94,6 +100,19 @@ function initEvents(Window, targetDocument, eventType) {
             watch.observe(container.element.target);
         }
     });
+
+    function copyEvent(event) {
+        const propertiesToCopy = ['type', 'target', 'timeStamp'];
+        const newObject = {};
+
+        // Copy the specified properties from the event to the new object
+        propertiesToCopy.forEach(prop => {
+            newObject[prop] = event[prop];
+        });
+
+        return newObject
+    }
+
 
     Window.addEventListener("scroll", scroll, { passive: false });
 
@@ -131,7 +150,9 @@ function findToolbar(e) {
     if (!target) return;
     for (let toolbar of toolbars) {
         // let target = e.target;
-
+        let closestToolbar = target.closest('toolbar, .toolbar')
+        if (target === closestToolbar)
+            continue
         if (toolbar.targetDocument == target.ownerDocument && toolbar.eventType == e.type) {
             if (toolbar.onEvent) {
                 if (toolbar.onEvent(target, e.type)) {
@@ -158,6 +179,20 @@ function findToolbar(e) {
                     show(toolbar.element);
                 } else
                     hide(toolbar.element);
+            } else if (e.selection) {
+                if (!e.selection.isCollapsed) {
+                    const range = e.selection.getRangeAt(0);
+                    const rect = range.getBoundingClientRect();
+
+                    toolbar.element.style.left = `${rect.left + window.scrollX + rect.width / 2 - toolbar.element.offsetWidth / 2}px`;
+                    toolbar.element.style.top = `${rect.top + window.scrollY - toolbar.element.offsetHeight - 10}px`;
+
+                    toolbar.element.style.position = 'absolute';
+                    toolbar.element.style.display = 'block';
+                } else {
+                    toolbar.element.style.display = 'none';
+                }
+                toolbar.element.toolbar = { target: target };
             } else {
                 toolbar.target = target.closest(toolbar.targetSelector);
                 if (!toolbar.target) {
