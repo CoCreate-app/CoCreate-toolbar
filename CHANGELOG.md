@@ -1,3 +1,10 @@
+## [1.17.4](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.3...v1.17.4) (2024-06-19)
+
+
+### Bug Fixes
+
+* selectionchange event places toolbar near selection ([26b5407](https://github.com/CoCreate-app/CoCreate-toolbar/commit/26b5407b20fc87b0d113f3594732c02f4152141c))
+
 ## [1.17.3](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.2...v1.17.3) (2024-06-12)
 
 
