@@ -149,9 +149,8 @@ function findToolbar(e) {
         target = e.target.parentElement;
     if (!target) return;
     for (let toolbar of toolbars) {
-        // let target = e.target;
         let closestToolbar = target.closest('toolbar, .toolbar')
-        if (target === closestToolbar)
+        if (closestToolbar)
             continue
         if (toolbar.targetDocument == target.ownerDocument && toolbar.eventType == e.type) {
             if (toolbar.onEvent) {
