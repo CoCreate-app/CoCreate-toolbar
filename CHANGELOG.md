@@ -1,3 +1,10 @@
+## [1.17.5](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.4...v1.17.5) (2024-06-23)
+
+
+### Bug Fixes
+
+* if target is toolbar continue ([0f025f4](https://github.com/CoCreate-app/CoCreate-toolbar/commit/0f025f485dde4e48a23ee19639513e5d5b6a3ea1))
+
 ## [1.17.4](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.3...v1.17.4) (2024-06-19)
 
 
