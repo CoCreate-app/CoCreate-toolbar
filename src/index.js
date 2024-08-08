@@ -74,11 +74,13 @@ function initEvents(Window, targetDocument, eventType) {
     let watch;
 
     targetDocument.addEventListener(eventType, (e) => {
+
         // if (e.type == 'selectionchange')
         // 	if (!hasSelection(e.target.parentElement)) return;
         if ((e.target.nodeName != '#text') && (e.target.nodeName != '#document'))
             if (e.target.closest('[toolbar-selector]')) return;
         if (e.type == 'selectstart' || e.type == 'selectionchange') {
+            if (e.target.closest && !e.target.closest('[contenteditable]')) return;
             if (e.target.parentElement && CoCreate.text && !hasSelection(e.target.parentElement)) return;
             const selection = window.getSelection();
             e = copyEvent(e);
