@@ -1,3 +1,10 @@
+## [1.17.6](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.5...v1.17.6) (2024-08-24)
+
+
+### Bug Fixes
+
+* selection start and selection change retuns if not contenteditable ([6ceb15b](https://github.com/CoCreate-app/CoCreate-toolbar/commit/6ceb15b154a9dbec1b42d8b4072471904fdb22a3))
+
 ## [1.17.5](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.4...v1.17.5) (2024-06-23)
 
 
