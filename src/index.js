@@ -233,8 +233,16 @@ function show(toolbar) {
         elPosition.left +
         targetWindow.scrollX +
         "px";
-    toolbar.style.width = target.offsetWidth + "px";
-    toolbar.style.height = target.offsetHeight + "px";
+
+    if (!target.offsetWidth && target.offsetWidth !== 0)
+        toolbar.style.width = target.clientWidth + "px";
+    else
+        toolbar.style.width = target.offsetWidth + "px";
+
+    if (!target.offsetHeight && target.offsetHeight !== 0)
+        toolbar.style.height = target.clientHeight + "px";
+    else
+        toolbar.style.height = target.offsetHeight + "px";
 
     if (target.offsetTop - bar.offsetHeight < 0)
         toolbar.setAttribute("toolbar-overflow", "");
@@ -262,9 +270,17 @@ function getPosition(el) {
         y = 0;
 
     while (el != null && el.tagName) {
-        x += el.offsetLeft || 0;
-        y += el.offsetTop || 0;
-        el = el.offsetParent;
+        if (!el.offsetLeft && el.offsetLeft !== 0)
+            x += el.clientLeft || 0;
+        else
+            x += el.offsetLeft || 0;
+
+        if (!el.offsetTop && el.offsetTop !== 0)
+            y += el.clientTop || 0;
+        else
+            y += el.offsetTop || 0;
+
+        el = el.offsetParent || el.parentElement;
     }
 
     return { left: parseInt(x, 10), top: parseInt(y, 10) };
