@@ -82,12 +82,21 @@ function initEvents(Window, targetDocument, eventType) {
         if (e.type == 'selectstart' || e.type == 'selectionchange') {
             if (e.target.closest && !e.target.closest('[contenteditable]')) return;
             if (e.target.parentElement && CoCreate.text && !hasSelection(e.target.parentElement)) return;
-            const selection = window.getSelection();
+            const selection = Window.getSelection();
             e = copyEvent(e);
             e.selection = selection
-            e.target = selection.anchorNode.parentElement
+            if (selection.anchorNode && selection.anchorNode.parentElement)
+                e.target = selection.anchorNode.parentElement
+            else
+                console.log("Selection does not exists:", selection.toString());
+            // if (selection && selection.rangeCount > 0 && !selection.isCollapsed)
+            //     e.target = selection.anchorNode.parentElement
         }
 
+        if (e.target.nodeName === "#document") {
+            e = copyEvent(e);
+            e.target = e.target.documentElement;
+        }
         // if (container.lastElement.type == 'selectstart' || container.lastElement.type == 'selectchange')
         // 	if (e.target.ownerDocument == container.lastElement.target.ownerDocument)
         // 	hide(container.lastElement.target.ownerDocument, container.lastElement.type)
@@ -150,10 +159,14 @@ function findToolbar(e) {
     if (e.target.nodeName == '#text')
         target = e.target.parentElement;
     if (!target) return;
+    if (target.closest && target.closest('toolbar, .toolbar')) {
+        return
+    }
+
     for (let toolbar of toolbars) {
-        let closestToolbar = target.closest('toolbar, .toolbar')
-        if (closestToolbar)
-            continue
+        // let closestToolbar = target.closest('toolbar, .toolbar')
+        // if (closestToolbar)
+        //     continue
         if (toolbar.targetDocument == target.ownerDocument && toolbar.eventType == e.type) {
             if (toolbar.onEvent) {
                 if (toolbar.onEvent(target, e.type)) {
@@ -176,31 +189,17 @@ function findToolbar(e) {
 
                 if (config) {
                     toolbar.target = target;
-                    toolbar.element.toolbar = { target: target, label: config.label };
+                    toolbar.element.toolbar = { target: target, label: config.label, selection: e.selection };
                     show(toolbar.element);
                 } else
                     hide(toolbar.element);
-            } else if (e.selection) {
-                if (!e.selection.isCollapsed) {
-                    const range = e.selection.getRangeAt(0);
-                    const rect = range.getBoundingClientRect();
-
-                    toolbar.element.style.left = `${rect.left + window.scrollX + rect.width / 2 - toolbar.element.offsetWidth / 2}px`;
-                    toolbar.element.style.top = `${rect.top + window.scrollY - toolbar.element.offsetHeight - 10}px`;
-
-                    toolbar.element.style.position = 'absolute';
-                    toolbar.element.style.display = 'block';
-                } else {
-                    toolbar.element.style.display = 'none';
-                }
-                toolbar.element.toolbar = { target: target };
             } else {
                 toolbar.target = target.closest(toolbar.targetSelector);
                 if (!toolbar.target) {
                     hide(toolbar.element);
                     continue;
                 }
-                toolbar.element.toolbar = { target: target };
+                toolbar.element.toolbar = { target: target, selection: e.selection };
                 show(toolbar.element);
             }
         }
@@ -209,6 +208,7 @@ function findToolbar(e) {
 
 function show(toolbar) {
     let target = toolbar.toolbar.target;
+    let selection = toolbar.toolbar.selection;
     let tagName = target.tagName;
     let targetWindow = target.ownerDocument.defaultView;
 
@@ -220,19 +220,35 @@ function show(toolbar) {
     if (!bar) bar = { offsetHeight: 0 };
     let tagNameEl = toolbar.querySelector(":scope [tagName]");
 
-    let elPosition = getPosition(target);
-    toolbar.style.display = "block";
-    toolbar.style.top =
-        frameElement.offsetTop +
-        elPosition.top -
-        targetWindow.scrollY -
-        bar.offsetHeight +
-        "px";
-    toolbar.style.left =
-        frameElement.offsetLeft +
-        elPosition.left +
-        targetWindow.scrollX +
-        "px";
+    if (selection) {
+        if (!selection.isCollapsed) {
+            const range = selection.getRangeAt(0);
+            const rect = range.getBoundingClientRect();
+
+            toolbar.style.left = `${frameElement.offsetLeft + rect.left + targetWindow.scrollX + rect.width / 2 - bar.offsetWidth / 2}px`;
+            toolbar.style.top = `${frameElement.offsetTop + rect.top + targetWindow.scrollY - bar.offsetHeight - 10}px`;
+
+            toolbar.style.position = 'absolute';
+            toolbar.style.display = 'block';
+        } else {
+            toolbar.style.display = 'none';
+        }
+    } else {
+
+        let elPosition = getPosition(target);
+        toolbar.style.display = "block";
+        toolbar.style.top =
+            frameElement.offsetTop +
+            elPosition.top -
+            targetWindow.scrollY -
+            bar.offsetHeight +
+            "px";
+        toolbar.style.left =
+            frameElement.offsetLeft +
+            elPosition.left +
+            targetWindow.scrollX +
+            "px";
+    }
 
     if (!target.offsetWidth && target.offsetWidth !== 0)
         toolbar.style.width = target.clientWidth + "px";
