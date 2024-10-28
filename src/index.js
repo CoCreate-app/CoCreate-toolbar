@@ -210,96 +210,114 @@ function show(toolbar) {
     let target = toolbar.toolbar.target;
     let selection = toolbar.toolbar.selection;
     let tagName = target.tagName;
-    let targetWindow = target.ownerDocument.defaultView;
+    let targetDocument = target.ownerDocument;
+    let targetWindow = targetDocument.defaultView;
 
-    let frameElement = targetWindow.frameElement;
-    if (!frameElement)
-        frameElement = { offsetTop: 0, offsetLeft: 0 };
+    // Get computed styles of the target element
+    const computedStyles = targetWindow.getComputedStyle(target);
+    const marginLeft = parseFloat(computedStyles.marginLeft) || 0;
+    const marginRight = parseFloat(computedStyles.marginRight) || 0;
+    const marginTop = parseFloat(computedStyles.marginTop) || 0;
+    const marginBottom = parseFloat(computedStyles.marginBottom) || 0;
+
+    let frameElement = targetWindow.frameElement; // The iframe element if inside an iframe
 
     let bar = toolbar.querySelector(":scope .tools, :scope tools");
     if (!bar) bar = { offsetHeight: 0 };
     let tagNameEl = toolbar.querySelector(":scope [tagName]");
 
-    if (selection) {
-        if (!selection.isCollapsed) {
-            const range = selection.getRangeAt(0);
-            const rect = range.getBoundingClientRect();
+    // Get the position of the target relative to the viewport
+    let rect = target.getBoundingClientRect();
 
-            toolbar.style.left = `${frameElement.offsetLeft + rect.left + targetWindow.scrollX + rect.width / 2 - bar.offsetWidth / 2}px`;
-            toolbar.style.top = `${frameElement.offsetTop + rect.top + targetWindow.scrollY - bar.offsetHeight - 10}px`;
+    // Initialize total offsets
+    let totalLeft = rect.left - marginLeft;
+    let totalTop = rect.top - marginTop - bar.offsetHeight;
 
-            toolbar.style.position = 'absolute';
-            toolbar.style.display = 'block';
-        } else {
-            toolbar.style.display = 'none';
-        }
-    } else {
+    // If inside an iframe, accumulate offsets
+    let currentWindow = targetWindow;
+    while (currentWindow !== window) {
+        let frameRect = currentWindow.frameElement.getBoundingClientRect();
+        totalLeft += frameRect.left;
+        totalTop += frameRect.top;
 
-        let elPosition = getPosition(target);
-        toolbar.style.display = "block";
-        toolbar.style.top =
-            frameElement.offsetTop +
-            elPosition.top -
-            targetWindow.scrollY -
-            bar.offsetHeight +
-            "px";
-        toolbar.style.left =
-            frameElement.offsetLeft +
-            elPosition.left +
-            targetWindow.scrollX +
-            "px";
+        currentWindow = currentWindow.parent;
     }
 
-    if (!target.offsetWidth && target.offsetWidth !== 0)
-        toolbar.style.width = target.clientWidth + "px";
-    else
-        toolbar.style.width = target.offsetWidth + "px";
+    // Add window scroll offsets
+    totalLeft += window.scrollX;
+    totalTop += window.scrollY;
 
-    if (!target.offsetHeight && target.offsetHeight !== 0)
-        toolbar.style.height = target.clientHeight + "px";
-    else
-        toolbar.style.height = target.offsetHeight + "px";
+    if (selection && !selection.isCollapsed) {
+        const range = selection.getRangeAt(0);
+        const selRect = range.getBoundingClientRect();
 
-    if (target.offsetTop - bar.offsetHeight < 0)
+        // Recalculate totalLeft and totalTop based on the selection
+        totalLeft = selRect.left + selRect.width / 2 - bar.offsetWidth / 2;
+        totalTop = selRect.top - bar.offsetHeight - 10;
+
+        // If inside an iframe, accumulate iframe offsets
+        currentWindow = targetWindow;
+        while (currentWindow !== window) {
+            let frameRect = currentWindow.frameElement.getBoundingClientRect();
+            totalLeft += frameRect.left;
+            totalTop += frameRect.top;
+
+            currentWindow = currentWindow.parent;
+        }
+
+        // Add window scroll offsets
+        totalLeft += window.scrollX;
+        totalTop += window.scrollY;
+
+        toolbar.style.display = 'block';
+    } else if (!selection) {
+        // No selection case (element toolbar)
+        toolbar.style.display = 'block';
+    } else {
+        // Collapsed selection (no text selected)
+        toolbar.style.display = 'none';
+        return;
+    }
+
+    toolbar.style.left = `${totalLeft}px`;
+    toolbar.style.top = `${totalTop}px`;
+
+    toolbar.style.position = 'absolute';
+
+    // Adjust toolbar dimensions to include margins
+    let totalWidth, totalHeight;
+
+    if (target instanceof SVGElement) {
+        // Margins may not apply to SVG elements
+        totalWidth = rect.width;
+        totalHeight = rect.height;
+    } else {
+        // Include margins for HTML elements
+        totalWidth = rect.width + marginLeft + marginRight;
+        totalHeight = rect.height + marginTop + marginBottom;
+    }
+
+    toolbar.style.width = `${totalWidth}px`;
+    toolbar.style.height = `${totalHeight}px`;
+
+    // Handle toolbar overflow
+    if (rect.top - bar.offsetHeight - marginTop < 0)
         toolbar.setAttribute("toolbar-overflow", "");
-    else toolbar.removeAttribute("toolbar-overflow");
+    else
+        toolbar.removeAttribute("toolbar-overflow");
 
+    // Update tagName if applicable
     if (tagName && tagNameEl) {
         let label = toolbar.toolbar.label;
         if (label)
             label = label.replace('{{tagName}}', tagName);
         tagNameEl.innerHTML = label || tagName;
     }
-
 }
 
 function hide(toolbar) {
     toolbar.style.display = "none";
     toolbar.toolbar = { target: '' };
-}
-
-function getPosition(el) {
-    //  let { x, y } = el.getBoundingClientRect()
-    //  return { left: x, top: y };
-    // finding el possition in scroll
-    let x = 0,
-        y = 0;
-
-    while (el != null && el.tagName) {
-        if (!el.offsetLeft && el.offsetLeft !== 0)
-            x += el.clientLeft || 0;
-        else
-            x += el.offsetLeft || 0;
-
-        if (!el.offsetTop && el.offsetTop !== 0)
-            y += el.clientTop || 0;
-        else
-            y += el.offsetTop || 0;
-
-        el = el.offsetParent || el.parentElement;
-    }
-
-    return { left: parseInt(x, 10), top: parseInt(y, 10) };
 }
 
 initToolbar();
