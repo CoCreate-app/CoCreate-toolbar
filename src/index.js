@@ -30,8 +30,10 @@ async function initElement(element) {
     }
 
     let event = element.getAttribute('toolbar-event');
-    if (!event)
-        event = 'mouseover';
+    if (event)
+        event = event.split(',').map(e => e.trim());
+    else
+        event = ['mouseover'];
 
     init({
         element: element,
@@ -58,12 +60,17 @@ function init({ element, selector, eventType, targetSelector, targetDocument, on
     }
 
     let eventListeners = windows.get(Window);
-    if (!eventListeners) eventListeners = [];
+    if (!eventListeners)
+        windows.set(Window, eventListeners = []);
 
-    if (eventListeners.indexOf(eventType) == -1) {
-        eventListeners.push(eventType);
-        initEvents(Window, targetDocument, eventType);
-        windows.set(Window, eventListeners);
+    if (!Array.isArray(eventType))
+        eventType = [eventType]
+
+    for (let i = 0; i < eventType.length; i++) {
+        if (eventListeners.indexOf(eventType[i]) == -1) {
+            eventListeners.push(eventType[i]);
+            initEvents(Window, targetDocument, eventType[i]);
+        }
     }
 
     toolbars.push({ element, selector, eventType, targetSelector, targetDocument, onEvent });
@@ -167,14 +174,17 @@ function findToolbar(e) {
         // let closestToolbar = target.closest('toolbar, .toolbar')
         // if (closestToolbar)
         //     continue
-        if (toolbar.targetDocument == target.ownerDocument && toolbar.eventType == e.type) {
-            if (toolbar.onEvent) {
+
+        if (toolbar.targetDocument == target.ownerDocument && toolbar.eventType.includes(e.type)) {
+            if (target && target.isConnected === false) {
+                hide(toolbar)
+            } else if (toolbar.onEvent) {
                 if (toolbar.onEvent(target, e.type)) {
                     toolbar.target = target;
                     toolbar.element.toolbar = { target: target };
                     show(toolbar.element);
                 } else
-                    hide(toolbar.element);
+                    hide(toolbar);
             } else if (toolbar.element.hasAttribute('config-key')) {
                 let ctarget = target;
                 let option = toolbar.element.getAttribute('config-key');
@@ -192,11 +202,11 @@ function findToolbar(e) {
                     toolbar.element.toolbar = { target: target, label: config.label, selection: e.selection };
                     show(toolbar.element);
                 } else
-                    hide(toolbar.element);
+                    hide(toolbar);
             } else {
                 toolbar.target = target.closest(toolbar.targetSelector);
                 if (!toolbar.target) {
-                    hide(toolbar.element);
+                    hide(toolbar);
                     continue;
                 }
                 toolbar.element.toolbar = { target: target, selection: e.selection };
@@ -243,9 +253,9 @@ function show(toolbar) {
         currentWindow = currentWindow.parent;
     }
 
-    // Add window scroll offsets
-    totalLeft += window.scrollX;
-    totalTop += window.scrollY;
+    // Add window scroll offsets if position absolute
+    // totalLeft += window.scrollX;
+    // totalTop += window.scrollY;
 
     if (selection && !selection.isCollapsed) {
         const range = selection.getRangeAt(0);
@@ -265,15 +275,11 @@ function show(toolbar) {
             currentWindow = currentWindow.parent;
         }
 
-        // Add window scroll offsets
-        totalLeft += window.scrollX;
-        totalTop += window.scrollY;
+        // Add window scroll offsets if position absolute
+        // totalLeft += window.scrollX;
+        // totalTop += window.scrollY;
 
-        toolbar.style.display = 'block';
-    } else if (!selection) {
-        // No selection case (element toolbar)
-        toolbar.style.display = 'block';
-    } else {
+    } else if (selection && selection.isCollapsed) {
         // Collapsed selection (no text selected)
         toolbar.style.display = 'none';
         return;
@@ -282,7 +288,7 @@ function show(toolbar) {
     toolbar.style.left = `${totalLeft}px`;
     toolbar.style.top = `${totalTop}px`;
 
-    toolbar.style.position = 'absolute';
+    toolbar.style.position = 'fixed';
 
     // Adjust toolbar dimensions to include margins
     let totalWidth, totalHeight;
@@ -313,11 +319,13 @@ function show(toolbar) {
             label = label.replace('{{tagName}}', tagName);
         tagNameEl.innerHTML = label || tagName;
     }
+    toolbar.style.display = 'block';
 }
 
 function hide(toolbar) {
-    toolbar.style.display = "none";
-    toolbar.toolbar = { target: '' };
+    toolbar.target = ''
+    toolbar.element.style.display = "none";
+    toolbar.element.toolbar = { target: '' };
 }
 
 initToolbar();
