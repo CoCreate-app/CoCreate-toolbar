@@ -1,3 +1,20 @@
+# [1.18.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.6...v1.18.0) (2024-11-04)
+
+
+### Bug Fixes
+
+* fallback to clientHeight, etc, if offset not available ([20677f4](https://github.com/CoCreate-app/CoCreate-toolbar/commit/20677f47552f3ea012c2f5dd4cb7c981ece55abe))
+* handling of hide toolbar ([2c0d29f](https://github.com/CoCreate-app/CoCreate-toolbar/commit/2c0d29f92968b951fbf1c03910ac7f6eae5cd8cf))
+* improved selection handling ([c948b9e](https://github.com/CoCreate-app/CoCreate-toolbar/commit/c948b9e2fb62002f477e00ae70baf22c5cda8fca))
+* postioning height and with of nested offsets and scrollable elements including frames ([382571f](https://github.com/CoCreate-app/CoCreate-toolbar/commit/382571fc89ba814992cce38ebbca16d8fb2ebd0d))
+* pretier.config.js and file formating ([9bccdc9](https://github.com/CoCreate-app/CoCreate-toolbar/commit/9bccdc9cd30f26d98adc070ba178bae1f860e657))
+
+
+### Features
+
+* add prettier.config.js and format files ([bf10812](https://github.com/CoCreate-app/CoCreate-toolbar/commit/bf10812ced12616619245b51ae0f50b0ba0e0773))
+* add prettier.config.js and format files ([c665be6](https://github.com/CoCreate-app/CoCreate-toolbar/commit/c665be626fc1b20a7423a5edc0cfdabb696693b2))
+
 ## [1.17.6](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.5...v1.17.6) (2024-08-24)
 
 
