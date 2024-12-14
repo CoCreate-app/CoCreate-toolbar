@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.18.0...v1.18.1) (2024-12-14)
+
+
+### Bug Fixes
+
+* improved event attribute split and trim using regex ([caf8026](https://github.com/CoCreate-app/CoCreate-toolbar/commit/caf80263c5be2afc26453ddd44f9ddff69dd190d))
+
 # [1.18.0](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.17.6...v1.18.0) (2024-11-04)
 
 
