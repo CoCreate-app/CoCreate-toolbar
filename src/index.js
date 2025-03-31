@@ -148,7 +148,7 @@ function initEvents(Window, targetDocument, eventType) {
 
 	Window.observer = observer.init({
 		name: "CoCreateToolbar",
-		observe: ["addedNodes"],
+		types: ["addedNodes"],
 		callback(mutation) {
 			if (!container.element) return;
 			if (mutation.target == container.element.target)
@@ -159,7 +159,7 @@ function initEvents(Window, targetDocument, eventType) {
 	// TODO: observer needs to support targeting another document
 	// targetDocument.observer = observer.init({
 	//     name: 'CoCreateToolbar',
-	//     observe: ['removedNodes'],
+	//     types: ['removedNodes'],
 	//     callback (mutation) {
 	//         if (mutation.target.toolbar)
 	// 			hide(mutation.target.toolbar.element)
