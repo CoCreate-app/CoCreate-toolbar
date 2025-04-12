@@ -1,70 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>CoCreate-toolbar | CoCreate</title>
+	<head>
+		<title>CoCreate-toolbar | CoCreate</title>
 
-        <!-- CoCreate Favicon -->
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="../assets/favicon.ico" />
+		<!-- CoCreate Favicon -->
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../assets/favicon.ico" />
 
-        <link rel="manifest" href="/manifest.webmanifest" />
-    </head>
+		<link rel="manifest" href="/manifest.webmanifest" />
+	</head>
 
-    <body>
-        <div class="margin-bottom:100px"></div>
+	<body>
+		<div class="margin-bottom:100px"></div>
 
-        <h1 id="test">Im a test... hover over me</h1>
+		<h1 id="test">Im a test... hover over me</h1>
 
-        <!-- Collaboration Toolbar -->
-        <div
-            toolbar-placent="top"
-            toolbar-selector="#test"
-            toolbar-event="click"
-            class="position:fixed display:none">
-            <tools class="width:100%">
-                <span id="bold-button"><i src="/assets/svg/bold.svg"></i></span>
-                <span id="italic-button"
-                    ><i src="/assets/svg/italic.svg"></i
-                ></span>
-                <span id="link-button"><i src="/assets/svg/link.svg"></i></span>
-                <span id="blockquote-button"
-                    ><i src="/assets/svg/quote-right.svg"></i
-                ></span>
-                <span id="header-1-button"
-                    ><i src="/assets/svg/heading.svg"></i><sub>1</sub></span
-                >
-                <span id="header-2-button"
-                    ><i src="/assets/svg/heading.svg"></i><sub>2</sub></span
-                >
-                <span
-                    hover="display:inline-block"
-                    show="#controls"
-                    hide="#controls"
-                    ><i src="/assets/svg/plus.svg"></i
-                ></span>
-                <span id="controls" hidden>
-                    <span id="image-button"
-                        ><i src="/assets/svg/camera.svg"></i
-                    ></span>
-                    <span id="video-button"
-                        ><i src="/assets/svg/play.svg"></i
-                    ></span>
-                    <span id="tweet-button"
-                        ><i src="/assets/svg/twitter.svg"></i
-                    ></span>
-                    <span id="divider-button"
-                        ><i src="/assets/svg/minus.svg"></i
-                    ></span>
-                </span>
-            </tools>
-            <div class="height:100% width:100% pointer-events:none"></div>
-        </div>
-        <!-- End Collaboration Toolbar -->
+		<!-- Collaboration Toolbar -->
+		<div
+			toolbar-placent="top"
+			toolbar-query="#test"
+			toolbar-event="click"
+			class="position:fixed display:none">
+			<tools class="width:100%">
+				<span id="bold-button"><i src="/assets/svg/bold.svg"></i></span>
+				<span id="italic-button"
+					><i src="/assets/svg/italic.svg"></i
+				></span>
+				<span id="link-button"><i src="/assets/svg/link.svg"></i></span>
+				<span id="blockquote-button"
+					><i src="/assets/svg/quote-right.svg"></i
+				></span>
+				<span id="header-1-button"
+					><i src="/assets/svg/heading.svg"></i><sub>1</sub></span
+				>
+				<span id="header-2-button"
+					><i src="/assets/svg/heading.svg"></i><sub>2</sub></span
+				>
+				<span
+					hover="display:inline-block"
+					show="#controls"
+					hide="#controls"
+					><i src="/assets/svg/plus.svg"></i
+				></span>
+				<span id="controls" hidden>
+					<span id="image-button"
+						><i src="/assets/svg/camera.svg"></i
+					></span>
+					<span id="video-button"
+						><i src="/assets/svg/play.svg"></i
+					></span>
+					<span id="tweet-button"
+						><i src="/assets/svg/twitter.svg"></i
+					></span>
+					<span id="divider-button"
+						><i src="/assets/svg/minus.svg"></i
+					></span>
+				</span>
+			</tools>
+			<div class="height:100% width:100% pointer-events:none"></div>
+		</div>
+		<!-- End Collaboration Toolbar -->
 
-        <!--<script src="../dist/CoCreate-toolbar.js"></script>-->
-        <script src="https://CoCreate.app/dist/CoCreate.js"></script>
-    </body>
+		<!--<script src="../dist/CoCreate-toolbar.js"></script>-->
+		<script src="https://CoCreate.app/dist/CoCreate.js"></script>
+	</body>
 </html>

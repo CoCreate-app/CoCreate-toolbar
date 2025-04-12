@@ -8,7 +8,7 @@ let windows = new Map();
 let toolbars = [];
 
 function initToolbar() {
-	let elements = document.querySelectorAll("[toolbar-selector]");
+	let elements = document.querySelectorAll("[toolbar-query]");
 	initElements(elements);
 }
 
@@ -17,7 +17,7 @@ function initElements(elements) {
 }
 
 async function initElement(element) {
-	let targetSelector = element.getAttribute("toolbar-selector");
+	let targetSelector = element.getAttribute("toolbar-query");
 	let targetDocument = document;
 
 	if (targetSelector.indexOf(";") !== -1) {
@@ -33,7 +33,7 @@ async function initElement(element) {
 
 	init({
 		element: element,
-		selector: "[toolbar-selector]",
+		selector: "[toolbar-query]",
 		eventType: event,
 		targetSelector: targetSelector.trim(),
 		targetDocument: targetDocument
@@ -91,7 +91,7 @@ function initEvents(Window, targetDocument, eventType) {
 		// if (e.type == 'selectionchange')
 		// 	if (!hasSelection(e.target.parentElement)) return;
 		if (e.target.nodeName != "#text" && e.target.nodeName != "#document")
-			if (e.target.closest("[toolbar-selector]")) return;
+			if (e.target.closest("[toolbar-query]")) return;
 		if (e.type == "selectstart" || e.type == "selectionchange") {
 			if (e.target.closest && !e.target.closest("[contenteditable]"))
 				return;
