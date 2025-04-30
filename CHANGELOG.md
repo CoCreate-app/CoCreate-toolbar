@@ -1,3 +1,13 @@
+## [1.18.3](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.18.2...v1.18.3) (2025-04-30)
+
+
+### Bug Fixes
+
+* added css-loader ([f9f240f](https://github.com/CoCreate-app/CoCreate-toolbar/commit/f9f240ffed2f43004e7f98c97d8123aa460b1452))
+* update query attributes ([1be503d](https://github.com/CoCreate-app/CoCreate-toolbar/commit/1be503d558b7805d1f346119e1c732b77941f836))
+* updated cocreate modules versions ([89dfc3d](https://github.com/CoCreate-app/CoCreate-toolbar/commit/89dfc3d22b458e437e31516e2dfc10330068d6e9))
+* webpack.config and devdependencies ([2101924](https://github.com/CoCreate-app/CoCreate-toolbar/commit/210192473fabb114b5e0beb6c839a6dc033649a8))
+
 ## [1.18.2](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.18.1...v1.18.2) (2025-04-11)
 
 
