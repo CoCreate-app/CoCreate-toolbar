@@ -1,3 +1,10 @@
+## [1.18.5](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.18.4...v1.18.5) (2026-02-04)
+
+
+### Bug Fixes
+
+* update worklow ([a3811a0](https://github.com/CoCreate-app/CoCreate-toolbar/commit/a3811a068e69681111906b48537bcd9269090ba7))
+
 ## [1.18.4](https://github.com/CoCreate-app/CoCreate-toolbar/compare/v1.18.3...v1.18.4) (2025-05-01)
 
 
